@@ -1,0 +1,38 @@
+baseURL: 'https://m3sservices.pages.dev'
+title: 'M3S Services Inc.'
+languageCode: en-us
+DefaultContentLanguage: en
+enableEmoji: false
+enableGitInfo: false
+enableRobotsTXT: true
+canonifyURLs: true
+paginate: 9
+enableInlineShortcodes: true
+
+params:
+  author: "M3S Services Inc. Team"
+  author_image: /images/defaults/author.jpg
+  og_image: /images/defaults/featured_mountain_image.jpg
+  moto: "M3S Services"
+  description: "Empowering Your Business with Expert Consultancy"
+  google_analytics_id: ''  # Update this if Google Analytics is used
+  cta:
+    text: "Contact Us Today"
+    url: "https://m3sservices.pages.dev/contact"  # Direct link to the contact page
+  footer:
+    social_url: "https://linkedin.com/company/m3sservicesinc"
+    social_username: '@m3sservicesinc'  # Assume the company has a LinkedIn page
+
+taxonomies:
+  category: Categories
+  tag: Tags
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+module:
+  hugoVersion:
+    extended: true
+    min: "0.110.0"
