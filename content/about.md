@@ -32,17 +32,17 @@ M3S Services is a leading consultancy firm, crafted by industry veterans committ
     <div class="space-y-10">
       <div class="grid grid-cols-1 gap-y-10 lg:grid-cols-3 lg:gap-x-8">
         <div class="space-y-4">
-          <img src="../assets/images/defaults/gauransh.jpg" alt="Gauransh Tandon" class="w-auto h-auto">
+          <img src="assets/images/defaults/gauransh.jpg" alt="Gauransh Tandon" class="w-auto h-auto">
           <h3 class="text-xl font-bold text-white">Gauransh D. Tandon</h3>
           <p class="text-gray-300">Gauransh leads our software development and AI/ML consultancy divisions, bringing cutting-edge solutions to complex challenges.</p>
         </div>
         <div class="space-y-4">
-          <img src="../assets/images/defaults/pranav.jpg" alt="Pranav Tandon" class="w-auto h-auto">
+          <img src="assets/images/defaults/pranav.jpg" alt="Pranav Tandon" class="w-auto h-auto">
           <h3 class="text-xl font-bold text-white">Pranav D. Tandon</h3>
           <p class="text-gray-300">Pranav oversees business operations, ensuring efficiency and strategic growth across all service areas.</p>
         </div>
         <div class="space-y-4">
-            <img src="../assets/images/defaults/sunit.jpg" alt="Sunit Tandon" class="w-auto h-auto">
+            <img src="assets/images/defaults/sunit.jpg" alt="Sunit Tandon" class="w-auto h-auto">
             <h3 class="text-xl font-bold text-white">Sunit Tandon</h3>
             <p class="text-gray-300">Sunit handles real estate operations, offering expert advice on property investment and management.</p>
         </div>
