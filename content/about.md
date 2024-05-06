@@ -37,12 +37,12 @@ M3S Services is a leading consultancy firm, crafted by industry veterans committ
         <div class="space-y-4">
           <img src="https://m3sservices.s3.amazonaws.com/pranav.jpg" alt="Pranav Tandon" width=100 height=100>
           <h3 class="text-xl font-bold text-white">Pranav D. Tandon</h3>
-          <p class="text-gray-300">Oversees business operations, ensuring efficiency and strategic growth across all service areas.</p>
+          <p class="text-gray-300">Oversees business operations to enhance operational efficiency and drive strategic growth across all service areas.</p>
         </div>
         <div class="space-y-4">
             <img src="https://m3sservices.s3.amazonaws.com/sunit.jpg" alt="Sunit Tandon" width=100 height=100>
             <h3 class="text-xl font-bold text-white">Sunit Tandon</h3>
-            <p class="text-gray-300">Handles real estate operations, offering expert advice on property investment and management.</p>
+            <p class="text-gray-300">Handles business investments by providing expert advice on investment opportunities and management strategies.</p>
         </div>
       </div>
     </div>
