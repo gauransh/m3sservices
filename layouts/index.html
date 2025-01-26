@@ -1,137 +1,312 @@
 {{ define "main" }}
-<div class="">
-  <div class="relative isolate">
-    <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
-      <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-    </div>
-    <div class="py-24 sm:py-32 lg:pb-40">
-      <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl text-center">
-          <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">{{ .Site.Params.moto }}</h1>
-          <p class="mt-6 text-lg leading-8 text-gray-300">{{ .Site.Params.description }}</p>
-          <div class="mt-10 flex items-center justify-center gap-x-6">
-            <a href="/contact" class="rounded-md bg-indigo-500 px-4 py-3 text-xl font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">{{ .Site.Params.cta.text }}</a>
-            <a href="/about" class="text-xl font-semibold leading-6 text-white">Learn more <span aria-hidden="true">→</span></a>
-          </div>
-        </div>
-        {{ $p1image := resources.Get .Site.Params.og_image }}
-        {{ with $p1image }}
-          {{ with .Fill (printf "%dx%d Center webp q90" 2432 1442) }}
-            <img src="{{ .RelPermalink }}" alt="App screenshot" width="2432" height="1442" class="mt-16 rounded-md bg-white/5 shadow-2xl ring-2 ring-white/10 sm:mt-24">
-          {{ end }}
-        {{ end }}
-      </div>
-    </div>
-    <div class="-z-50 absolute inset-x-0 top-[calc(100%-13rem)] transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
-      <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+
+<!-- Include Swiper's CSS/JS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+<script
+  src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"
+  defer
+></script>
+
+
+<!-- Hero Section -->
+<div class="relative isolate bg-gray-900 text-white overflow-hidden">
+  <!-- Gradient Blur (Top) -->
+  <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+    <div 
+      class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] 
+             -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] 
+             to-[#9089fc] opacity-20 sm:left-[calc(50%-30rem)] 
+             sm:w-[72.1875rem]"
+      style="clip-path: polygon(
+        74.1% 44.1%,
+        100% 61.6%,
+        97.5% 26.9%,
+        85.5% 0.1%,
+        80.7% 2%,
+        72.5% 32.5%,
+        60.2% 62.4%,
+        52.4% 68.1%,
+        47.5% 58.3%,
+        45.2% 34.5%,
+        27.5% 76.7%,
+        0.1% 64.9%,
+        17.9% 100%,
+        27.6% 76.8%,
+        76.1% 97.7%,
+        74.1% 44.1%
+      );">
     </div>
   </div>
-  <!-- <section class="bg-gray-900 py-24 sm:py-32">
+
+  <div class="py-24 sm:py-32 lg:pb-40">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="mx-auto grid max-w-2xl grid-cols-1 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-        <div class="flex flex-col pb-10 sm:pb-16 lg:pb-0 lg:pr-8 xl:pr-20">
-          <img class="h-12 self-start" src="https://tailwindui.com/img/logos/tuple-logo-white.svg" alt="">
-          <figure class="mt-10 flex flex-auto flex-col justify-between">
-            <blockquote class="text-lg leading-8 text-white">
-              <p>“Amet amet eget scelerisque tellus sit neque faucibus non eleifend. Integer eu praesent at a. Ornare arcu gravida natoque erat et cursus tortor consequat at. Vulputate gravida sociis enim nullam ultricies habitant malesuada lorem ac. Tincidunt urna dui pellentesque sagittis.”</p>
-            </blockquote>
-            <figcaption class="mt-10 flex items-center gap-x-6">
-              <img class="h-14 w-14 rounded-full bg-gray-800" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-              <div class="text-base">
-                <div class="font-semibold text-white">Judith Black</div>
-                <div class="mt-1 text-gray-400">CEO of Tuple</div>
-              </div>
-            </figcaption>
-          </figure>
-        </div>
-        <div class="flex flex-col border-t border-white/10 pt-10 sm:pt-16 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0 xl:pl-20">
-          <img class="h-12 self-start" src="https://tailwindui.com/img/logos/reform-logo-white.svg" alt="">
-          <figure class="mt-10 flex flex-auto flex-col justify-between">
-            <blockquote class="text-lg leading-8 text-white">
-              <p>“Excepteur veniam labore ullamco eiusmod. Pariatur consequat proident duis dolore nulla veniam reprehenderit nisi officia voluptate incididunt exercitation exercitation elit. Nostrud veniam sint dolor nisi ullamco.”</p>
-            </blockquote>
-            <figcaption class="mt-10 flex items-center gap-x-6">
-              <img class="h-14 w-14 rounded-full bg-gray-800" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-              <div class="text-base">
-                <div class="font-semibold text-white">Joseph Rodriguez</div>
-                <div class="mt-1 text-gray-400">CEO of Reform</div>
-              </div>
-            </figcaption>
-          </figure>
+      <div class="mx-auto max-w-2xl text-center">
+        <h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
+          {{ .Site.Params.moto }}
+        </h1>
+        <p class="mt-6 text-lg leading-8 text-gray-300">
+          {{ .Site.Params.description }}
+        </p>
+        <div class="mt-8 text-center text-xxl ">
+          <a
+            href="https://cal.com/m3sservices/30min?month=2025-01&date=2025-01-27"
+            target="_blank"
+            rel="noopener"
+            class="inline-block rounded-md bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 text-sm font-semibold text-white transition hover:from-purple-500 hover:to-pink-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-500 focus-visible:ring-offset-2"
+          >
+            Book a Call
+          </a>
         </div>
       </div>
-    </div>
-  </section> -->
-  <section class="py-12 sm:py-16 bg-gray-900">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid grid-cols-1 gap-y-10 lg:grid-cols-2 lg:gap-x-8">
-        <!-- Software and AI/ML -->
-        <div class="space-y-4">
-          <div class="flex items-center space-x-3">
-            <svg xmlns="http://www.w3.org/2000/svg" data-slot="icon" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
-            </svg>
-            <h2 class="text-2xl font-bold text-white">Software and AI/ML</h2>
-          </div>
-          <p class="text-gray-300">Our team of experts specializes in developing bespoke software and integrating cutting-edge AI and machine learning technologies. We help you streamline operations, enhance decision-making processes, and create sustainable competitive advantages.</p>
-        </div>
-        <!-- Business Operations -->
-        <div class="space-y-4">
-          <div class="flex items-center space-x-3">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z" />
-            </svg>
-            <h2 class="text-2xl font-bold text-white">Business Operations</h2>
-          </div>
-          <p class="text-gray-300">We provide comprehensive strategies to optimize your operational workflows, reduce costs, and improve service delivery across all levels of your organization. Our consultants work closely with you to identify areas for improvement and implement effective solutions.</p>
-        </div>
-        <!-- Leadership and Management -->
-        <div class="space-y-4">
-          <div class="flex items-center space-x-3">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.497 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 0 0 2.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 0 1 2.916.52 6.003 6.003 0 0 1-5.395 4.972m0 0a6.726 6.726 0 0 1-2.749 1.35m0 0a6.772 6.772 0 0 1-3.044 0" />
-            </svg>
-            <h2 class="text-2xl font-bold text-white">Leadership and Management</h2>
-          </div>
-          <p class="text-gray-300">Our leadership development programs focus on enhancing your team's capabilities in effective communication, strategic thinking, and team motivation. We equip your leaders with the skills they need to drive success.</p>
-          <!-- <p class="text-gray-300">Our goal is to cultivate leaders who can inspire and drive their teams towards achieving business excellence.</p> -->
-        </div>
-        <!-- Financial Management -->
-        <div class="space-y-4">
-          <div class="flex items-center space-x-3">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z"/>
-            </svg>
-            <h2 class="text-2xl font-bold text-white">Financial Management</h2>
-          </div>
-          <p class="text-gray-300">Gain a deep understanding of your organization's financial health with our expert financial planning and analysis services. We help you make informed decisions to optimize your financial performance.</p>
-          <!-- <p class="text-gray-300">We help businesses implement robust financial systems to ensure compliance, optimize investment, and increase profitability.</p> -->
-        </div>
-        <!-- Sales And Marketing -->
-        <!--  -->
-        <div class="space-y-4">
-          <div class="flex items-center space-x-3">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"/>
-            </svg>
-            <h2 class="text-2xl font-bold text-white">Sales And Marketing</h2>
-          </div>
-          <p class="text-gray-300">Leverage our marketing expertise to build powerful sales strategies that capture market share and engage customers effectively. We help you develop a strong brand presence and drive revenue growth.</p>
-        </div>
-        <!-- Real Estate Management -->
-        <div class="space-y-4">
-          <div class="flex items-center space-x-3">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z"/>
-            </svg>
-            <h2 class="text-2xl font-bold text-white">Investment Management</h2>
-          </div>
-          <!-- <p class="text-gray-300">Optimize your real estate assets with our management services designed to enhance property value through strategic leasing, maintenance, and tenant relations.</p> -->
-          <p class="text-gray-300">Our team provides comprehensive support for global investments, ensuring your portfolio delivers maximum returns. We offer strategic advice and insights to help you navigate complex investment landscapes.</p>
-        </div>
       </div>
+
+      <!-- Optional hero image using .Site.Params.og_image -->
+      {{ $p1image := resources.Get .Site.Params.og_image }}
+      {{ with $p1image }}
+        {{ with .Fill (printf "%dx%d Center webp q90" 2432 1442) }}
+          <img
+            src="{{ .RelPermalink }}"
+            alt="Hero Visual"
+            width="2432"
+            height="1442"
+            class="mx-auto mt-16 rounded-md bg-white/5 shadow-2xl 
+                   ring-2 ring-white/10 sm:mt-24"
+          >
+        {{ end }}
+      {{ end }}
     </div>
-  </section>
-  
+  </div>
+
+  <!-- Gradient Blur (Bottom) -->
+  <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-50 transform-gpu 
+              overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+       aria-hidden="true">
+    <div 
+      class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] 
+             -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] 
+             opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+      style="clip-path: polygon(
+        74.1% 44.1%,
+        100% 61.6%,
+        97.5% 26.9%,
+        85.5% 0.1%,
+        80.7% 2%,
+        72.5% 32.5%,
+        60.2% 62.4%,
+        52.4% 68.1%,
+        47.5% 58.3%,
+        45.2% 34.5%,
+        27.5% 76.7%,
+        0.1% 64.9%,
+        17.9% 100%,
+        27.6% 76.8%,
+        76.1% 97.7%,
+        74.1% 44.1%
+      );">
+    </div>
+  </div>
 </div>
+
+<!-- Services Section (Swiper Slider with Heroicons) -->
+<section class="bg-gray-900 py-12 sm:py-16">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="relative swiper mySwiper group">
+
+      <!-- Swiper Wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slide: Software & AI/ML -->
+        <div class="swiper-slide flex flex-col justify-center min-h-[300px]">
+          <div class="space-y-4 bg-gray-800 rounded-md p-6 shadow transition hover:shadow-lg">
+            <!-- Heroicons CPU for AI/ML -->
+            <div class="flex items-center space-x-3">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                   viewBox="0 0 30 30" stroke-width="1.5"
+                   stroke="currentColor" class="h-6 w-6 text-white">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M9 4.5V3m3 1.5V3m3 1.5V3m3 7.5h1.5M18 15h1.5M18 18h1.5M6 10.5H4.5M6 13.5H4.5M6 16.5H4.5m3.75
+                        -6.75h6.75c.414 0 .75.336.75.75v6.75c0 .414-.336.75-.75.75H9.75a.75.75 0 01-.75-.75v-6.75c0-.414.336-.75.75
+                        -.75z"/>
+              </svg>
+              <h2 class="text-2xl font-bold text-white">Software & AI/ML</h2>
+            </div>
+            <p class="text-gray-300">
+              Develop bespoke software and integrate cutting-edge AI/ML
+              solutions to streamline ops, enhance decision-making,
+              and build lasting advantages.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide: Business Operations -->
+        <div class="swiper-slide flex flex-col justify-center min-h-[300px]">
+          <div class="space-y-4 bg-gray-800 rounded-md p-6 shadow transition hover:shadow-lg">
+            <!-- Heroicons Cog6Tooth for Business Ops -->
+            <div class="flex items-center space-x-3">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                   viewBox="0 0 30 30" stroke-width="1.5"
+                   stroke="currentColor" class="h-6 w-6 text-white">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M4.5 12a7.5 7.5 0 0115 0 7.5 7.5 0 01
+                         -15 0zm7.5-6V3m3.182 
+                         1.318l2.121-2.12m-5.303 
+                         9.302h3.75M15.75 12a3.75 
+                         3.75 0 11-7.5 0 
+                         3.75 3.75 0 017.5 0z"/>
+              </svg>
+              <h2 class="text-2xl font-bold text-white">Business Operations</h2>
+            </div>
+            <p class="text-gray-300">
+              Optimize workflows, reduce costs, and improve service delivery.
+              Our experts turn inefficiencies into competitive strengths.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide: Leadership & Management -->
+        <div class="swiper-slide flex flex-col justify-center min-h-[300px]">
+          <div class="space-y-4 bg-gray-800 rounded-md p-6 shadow transition hover:shadow-lg">
+            <!-- Heroicons UserGroup for Leadership -->
+            <div class="flex items-center space-x-3">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" 
+                   viewBox="0 0 30 30" stroke-width="1.5" 
+                   stroke="currentColor" class="h-6 w-6 text-white">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M17 20h5v-2a4 4 0 00-4
+                         -4h-1.5m-1 6h-9a4 4 0 00-4
+                         4v2h18v-2a4 4 0 00-4-4H5zm0 
+                         0a4 4 0 014-4"/>
+              </svg>
+              <h2 class="text-2xl font-bold text-white">Leadership & Management</h2>
+            </div>
+            <p class="text-gray-300">
+              Strengthen communication, strategic thinking, and motivation.
+              Our leadership solutions empower teams to drive sustainable success.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide: Financial Management -->
+        <div class="swiper-slide flex flex-col justify-center min-h-[300px]">
+          <div class="space-y-4 bg-gray-800 rounded-md p-6 shadow transition hover:shadow-lg">
+            <!-- Heroicons CurrencyDollar for Finance -->
+            <div class="flex items-center space-x-3">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                   viewBox="0 0 30 30" stroke-width="1.5"
+                   stroke="currentColor" class="h-6 w-6 text-white">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M12 8c-1.657 0-3 .895-3 2s1.343 
+                         2 3 2 3 .895 3 2-1.343 2-3 2m0-8V3m0 
+                         14v2.75"/>
+              </svg>
+              <h2 class="text-2xl font-bold text-white">Financial Management</h2>
+            </div>
+            <p class="text-gray-300">
+              Gain deep financial insights with our planning and analysis
+              services, helping you make informed decisions for growth.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide: Sales & Marketing -->
+        <div class="swiper-slide flex flex-col justify-center min-h-[300px]">
+          <div class="space-y-4 bg-gray-800 rounded-md p-6 shadow transition hover:shadow-lg">
+            <!-- Heroicons Megaphone for Marketing -->
+            <div class="flex items-center space-x-3">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" 
+                   viewBox="0 0 30 30" stroke-width="1.5" 
+                   stroke="currentColor" class="h-6 w-6 text-white">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M3.75 8.25l16.5-3v13.5l-16.5-3v
+                         -7.5zm0 7.5v1.5a2.25 2.25 0 002.25 
+                         2.25h1.5a2.25 2.25 0 002.25 
+                         -2.25v-2.25"/>
+              </svg>
+              <h2 class="text-2xl font-bold text-white">Sales & Marketing</h2>
+            </div>
+            <p class="text-gray-300">
+              Amplify brand visibility, capture market share, and increase 
+              revenue. Our end-to-end marketing solutions get you noticed
+              and keep customers engaged.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide: Investment Management -->
+        <div class="swiper-slide flex flex-col justify-center min-h-[300px]">
+          <div class="space-y-4 bg-gray-800 rounded-md p-6 shadow transition hover:shadow-lg">
+            <!-- Heroicons ArrowTrendingUp for Investment -->
+            <div class="flex items-center space-x-3">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                   viewBox="0 0 30 30" stroke-width="1.5"
+                   stroke="currentColor" class="h-6 w-6 text-white">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M2.25 18L9 11.25l4.5 4.5
+                         7.5-7.5M15 4.5h6v6"/>
+              </svg>
+              <h2 class="text-2xl font-bold text-white">Investment Management</h2>
+            </div>
+            <p class="text-gray-300">
+              Our global expertise helps you navigate complex markets, 
+              ensuring maximum returns on investments and robust risk mitigation.
+            </p>
+          </div>
+        </div>
+
+      </div><!-- end .swiper-wrapper -->
+
+      <!-- Pagination (dots) -->
+      <div class="swiper-pagination text-white"></div>
+      <!-- Arrows (visible on hover) -->
+      <div class="swiper-button-next opacity-10 hover:opacity-100 hidden group-hover:block text-white"></div>
+      <div class="swiper-button-prev opacity-10 hover:opacity-100 hidden group-hover:block text-white"></div>
+    </div>
+
+    <!-- CTA Below Slider -->
+    <!-- <div class="mt-12 text-center">
+      <a href="/contact"
+         class="inline-block rounded-md bg-gradient-to-r from-pink-500 to-purple-500
+                px-8 py-3 text-lg font-semibold text-white transition 
+                hover:from-purple-500 hover:to-pink-500 
+                focus-visible:outline-none focus-visible:ring-2 
+                focus-visible:ring-pink-500 focus-visible:ring-offset-2">
+        Discuss Your Needs
+      </a>
+    </div> -->
+  </div>
+</section>
+
+<!-- Swiper Initialization -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  new Swiper('.mySwiper', {
+    loop: true,
+    speed: 800,
+    grabCursor: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    // Pause autoplay on hover
+    on: {
+      init() {
+        const swiperEl = this.el;
+        swiperEl.addEventListener('mouseenter', () => this.autoplay.stop());
+        swiperEl.addEventListener('mouseleave', () => this.autoplay.start());
+      },
+    },
+  });
+});
+</script>
+
 {{ end }}
