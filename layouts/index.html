@@ -429,33 +429,65 @@
 
 <!-- Swiper Initialization -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  new Swiper('.mySwiper', {
-    loop: true,
-    speed: 800,
-    grabCursor: true,
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    // Pause autoplay on hover
-    on: {
-      init() {
-        const swiperEl = this.el;
-        swiperEl.addEventListener('mouseenter', () => this.autoplay.stop());
-        swiperEl.addEventListener('mouseleave', () => this.autoplay.start());
+  document.addEventListener('DOMContentLoaded', function() {
+    new Swiper('.mySwiper', {
+      // Loop & Autoplay
+      loop: true,
+      speed: 400,            // Faster transition (default ~300ms, we use 350ms here)
+      effect: 'fade',        // Seamless fade effect
+      fadeEffect: {
+        crossFade: true,     // Cross-fade slides for smooth transitions
       },
-    },
+      autoplay: {
+        delay: 2000,         // 2s between slides for a snappier feel
+        disableOnInteraction: false,
+      },
+      
+      // Show multiple slides in a cool 3D style
+      effect: 'coverflow',
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 150,
+        modifier: 1,
+        slideShadows: false, // or true if you like shadows
+      },
+  
+      // Pagination & Navigation
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      
+      // Responsive breakpoints: show more slides on bigger screens
+      breakpoints: {
+        640: {
+          slidesPerView: 1, // On small screens, 1 slide at a time
+          spaceBetween: 0
+        },
+        1024: {
+          slidesPerView: 2, // On large screens, 2 slides in view
+          spaceBetween: 30
+        }
+      },
+  
+      // Grab-cursor for a more modern feel
+      grabCursor: true,
+  
+      // Pause autoplay on hover (optional)
+      on: {
+        init() {
+          const swiperEl = this.el;
+          swiperEl.addEventListener('mouseenter', () => this.autoplay.stop());
+          swiperEl.addEventListener('mouseleave', () => this.autoplay.start());
+        },
+      },
+    });
   });
-});
-</script>
+  </script>  
 
 {{ end }}
