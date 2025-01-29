@@ -72,7 +72,7 @@
     /* height: 80px;  <-- Removed this line */
     overflow: hidden;
     width: 100%;
-    background-color: #1f2937; 
+    background-color: #ec1aff; 
     border-radius: 0.5rem; 
     padding: 1rem;
   }
@@ -108,10 +108,11 @@
   }
   </style>
   
-  <section class="bg-section-dark py-8 sm:py-12 text-center">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  <section class="bg-gray-500 py-8 sm:py-12 text-center">
+
+    <div class="mx-auto max-w-7xl bg-gradient-to-r sm:px-6 lg:px-8">
       <!-- Container now uses an ID so we can style it with the updated CSS -->
-      <div id="marqueeContainer" class="mx-auto my-4">
+      <div class="marquee bg-gradient-to-r from-pink-500 to-purple-500 rounded-md shadow p-4 overflow-hidden">
         <h2 class="text-2xl font-bold text-white mb-4">Trusted By</h2>
         <div id="marqueeContent">
           <!-- 1. Aimbridge Hospitality (USA) -->
@@ -139,7 +140,7 @@
             >
           </a>
           <!-- 4. Aurva.io (with invert filter example) -->
-          <a style="filter: invert(100%);" href="https://aurva.io" target="_blank" rel="noopener" class="logo-link transition hover:opacity-80">
+          <a href="https://aurva.io" target="_blank" rel="noopener" class="logo-link transition hover:opacity-80">
             <img 
               src="https://m3sservices.s3.us-east-1.amazonaws.com/aurva.png"
               alt="Aurva.io"
@@ -147,7 +148,7 @@
             >
           </a>
           <!-- 5. BPEA Singapore (Singapore) -->
-          <a style="filter: invert(100%);" href="https://www.bpea.com.sg/" target="_blank" rel="noopener" class="logo-link">
+          <a href="https://www.bpea.com.sg/" target="_blank" rel="noopener" class="logo-link">
             <img 
               src="https://m3sservices.s3.us-east-1.amazonaws.com/bpea.png"
               alt="BPEA Singapore (Singapore)"
@@ -187,7 +188,7 @@
             >
           </a>
           <!-- 10. Fyler.us (invert example) -->
-          <a style="filter: invert(100%);" href="https://fyler.us" target="_blank" rel="noopener" class="logo-link">
+          <a href="https://fyler.us" target="_blank" rel="noopener" class="logo-link">
             <img 
               src="https://m3sservices.s3.us-east-1.amazonaws.com/fyler.png"
               alt="Fyler.us"
@@ -266,7 +267,9 @@
       <!-- Swiper Wrapper -->
       <div class="swiper-wrapper">
         <!-- Slide: Software & AI/ML -->
-        <div class="swiper-slide flex flex-col justify-center min-h-[300px]">
+        <div class="swiper-slide flex flex-col justify-center items-center
+        bg-gray-800 rounded-md p-6 shadow-md hover:shadow-xl 
+        min-h-[300px] transition">
           <div class="space-y-4 bg-gray-800 rounded-md p-6 shadow transition hover:shadow-lg">
             <!-- Heroicons CPU for AI/ML -->
             <div class="flex items-center space-x-3">
@@ -289,7 +292,9 @@
         </div>
 
         <!-- Slide: Business Operations -->
-        <div class="swiper-slide flex flex-col justify-center min-h-[300px]">
+        <div class="swiper-slide flex flex-col justify-center items-center
+        bg-gray-800 rounded-md p-6 shadow-md hover:shadow-xl 
+        min-h-[300px] transition">
           <div class="space-y-4 bg-gray-800 rounded-md p-6 shadow transition hover:shadow-lg">
             <!-- Heroicons Cog6Tooth for Business Ops -->
             <div class="flex items-center space-x-3">
@@ -314,7 +319,9 @@
         </div>
 
         <!-- Slide: Leadership & Management -->
-        <div class="swiper-slide flex flex-col justify-center min-h-[300px]">
+        <div class="swiper-slide flex flex-col justify-center items-center
+        bg-gray-800 rounded-md p-6 shadow-md hover:shadow-xl 
+        min-h-[300px] transition">
           <div class="space-y-4 bg-gray-800 rounded-md p-6 shadow transition hover:shadow-lg">
             <!-- Heroicons UserGroup for Leadership -->
             <div class="flex items-center space-x-3">
@@ -337,7 +344,9 @@
         </div>
 
         <!-- Slide: Financial Management -->
-        <div class="swiper-slide flex flex-col justify-center min-h-[300px]">
+        <div class="swiper-slide flex flex-col justify-center items-center
+        bg-gray-800 rounded-md p-6 shadow-md hover:shadow-xl 
+        min-h-[300px] transition">
           <div class="space-y-4 bg-gray-800 rounded-md p-6 shadow transition hover:shadow-lg">
             <!-- Heroicons CurrencyDollar for Finance -->
             <div class="flex items-center space-x-3">
@@ -359,7 +368,9 @@
         </div>
 
         <!-- Slide: Sales & Marketing -->
-        <div class="swiper-slide flex flex-col justify-center min-h-[300px]">
+        <div class="swiper-slide flex flex-col justify-center items-center
+        bg-gray-800 rounded-md p-6 shadow-md hover:shadow-xl 
+        min-h-[300px] transition">
           <div class="space-y-4 bg-gray-800 rounded-md p-6 shadow transition hover:shadow-lg">
             <!-- Heroicons Megaphone for Marketing -->
             <div class="flex items-center space-x-3">
@@ -383,7 +394,9 @@
         </div>
 
         <!-- Slide: Investment Management -->
-        <div class="swiper-slide flex flex-col justify-center min-h-[300px]">
+        <div class="swiper-slide flex flex-col justify-center items-center
+        bg-gray-800 rounded-md p-6 shadow-md hover:shadow-xl 
+        min-h-[300px] transition">
           <div class="space-y-4 bg-gray-800 rounded-md p-6 shadow transition hover:shadow-lg">
             <!-- Heroicons ArrowTrendingUp for Investment -->
             <div class="flex items-center space-x-3">

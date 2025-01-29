@@ -97,7 +97,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
   <section class="bg-section-dark py-8 sm:py-12 text-center">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- Container now uses an ID so we can style it with the updated CSS -->
-      <div id="marqueeContainer" class="mx-auto my-4">
+      <div class="marquee bg-gradient-to-r from-pink-500 to-purple-500 rounded-md shadow p-4 overflow-hidden">
         <h2 class="text-2xl font-bold text-white mb-4">Trusted By</h2>
         <div id="marqueeContent">
           <!-- 1. Aimbridge Hospitality (USA) -->
@@ -125,7 +125,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
             >
           </a>
           <!-- 4. Aurva.io (with invert filter example) -->
-          <a style="filter: invert(100%);" href="https://aurva.io" target="_blank" rel="noopener" class="logo-link transition hover:opacity-80">
+          <a href="https://aurva.io" target="_blank" rel="noopener" class="logo-link transition hover:opacity-80">
             <img 
               src="https://m3sservices.s3.us-east-1.amazonaws.com/aurva.png"
               alt="Aurva.io"
@@ -133,7 +133,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
             >
           </a>
           <!-- 5. BPEA Singapore (Singapore) -->
-          <a style="filter: invert(100%);" href="https://www.bpea.com.sg/" target="_blank" rel="noopener" class="logo-link">
+          <a href="https://www.bpea.com.sg/" target="_blank" rel="noopener" class="logo-link">
             <img 
               src="https://m3sservices.s3.us-east-1.amazonaws.com/bpea.png"
               alt="BPEA Singapore (Singapore)"
@@ -173,7 +173,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
             >
           </a>
           <!-- 10. Fyler.us (invert example) -->
-          <a style="filter: invert(100%);" href="https://fyler.us" target="_blank" rel="noopener" class="logo-link">
+          <a href="https://fyler.us" target="_blank" rel="noopener" class="logo-link">
             <img 
               src="https://m3sservices.s3.us-east-1.amazonaws.com/fyler.png"
               alt="Fyler.us"
@@ -328,7 +328,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
   <section class="bg-section-dark py-8 sm:py-12 text-center">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- Container now uses an ID so we can style it with the updated CSS -->
-      <div id="marqueeContainer" class="mx-auto my-4">
+      <div class="marquee bg-gradient-to-r from-pink-500 to-purple-500 rounded-md shadow p-4 overflow-hidden">
                 <div id="marqueeContent">
           <!-- 1. Aimbridge Hospitality (USA) -->
           <a href="https://www.aimbridgehospitality.com" target="_blank" rel="noopener" class="logo-link">
@@ -355,7 +355,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
             >
           </a>
           <!-- 4. Aurva.io (with invert filter example) -->
-          <a style="filter: invert(100%);" href="https://aurva.io" target="_blank" rel="noopener" class="logo-link transition hover:opacity-80">
+          <a href="https://aurva.io" target="_blank" rel="noopener" class="logo-link transition hover:opacity-80">
             <img 
               src="https://m3sservices.s3.us-east-1.amazonaws.com/aurva.png"
               alt="Aurva.io"
@@ -363,7 +363,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
             >
           </a>
           <!-- 5. BPEA Singapore (Singapore) -->
-          <a style="filter: invert(100%);" href="https://www.bpea.com.sg/" target="_blank" rel="noopener" class="logo-link">
+          <a href="https://www.bpea.com.sg/" target="_blank" rel="noopener" class="logo-link">
             <img 
               src="https://m3sservices.s3.us-east-1.amazonaws.com/bpea.png"
               alt="BPEA Singapore (Singapore)"
@@ -403,7 +403,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
             >
           </a>
           <!-- 10. Fyler.us (invert example) -->
-          <a style="filter: invert(100%);" href="https://fyler.us" target="_blank" rel="noopener" class="logo-link">
+          <a href="https://fyler.us" target="_blank" rel="noopener" class="logo-link">
             <img 
               src="https://m3sservices.s3.us-east-1.amazonaws.com/fyler.png"
               alt="Fyler.us"

@@ -205,7 +205,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
             >
           </a>
           <!-- 4. Aurva.io (with invert filter example) -->
-          <a style="filter: invert(100%);" href="https://aurva.io" target="_blank" rel="noopener" class="logo-link transition hover:opacity-80">
+          <a href="https://aurva.io" target="_blank" rel="noopener" class="logo-link transition hover:opacity-80">
             <img 
               src="https://m3sservices.s3.us-east-1.amazonaws.com/aurva.png"
               alt="Aurva.io"
@@ -213,7 +213,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
             >
           </a>
           <!-- 5. BPEA Singapore (Singapore) -->
-          <a style="filter: invert(100%);" href="https://www.bpea.com.sg/" target="_blank" rel="noopener" class="logo-link">
+          <a href="https://www.bpea.com.sg/" target="_blank" rel="noopener" class="logo-link">
             <img 
               src="https://m3sservices.s3.us-east-1.amazonaws.com/bpea.png"
               alt="BPEA Singapore (Singapore)"
@@ -253,7 +253,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
             >
           </a>
           <!-- 10. Fyler.us (invert example) -->
-          <a style="filter: invert(100%);" href="https://fyler.us" target="_blank" rel="noopener" class="logo-link">
+          <a href="https://fyler.us" target="_blank" rel="noopener" class="logo-link">
             <img 
               src="https://m3sservices.s3.us-east-1.amazonaws.com/fyler.png"
               alt="Fyler.us"
