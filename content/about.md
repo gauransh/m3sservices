@@ -142,11 +142,12 @@ featured_image: "../assets/images/defaults/about_us.jpg"
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <h2 class="text-2xl font-bold text-white mb-4">Our Valued Customers</h2>
     <style>
+      /* Remove fixed height; let the container size to its contents */
       #marqueeContainer {
-        position: relative; 
+        position: relative;
+        /* height: 80px;  <-- Removed this line */
         overflow: hidden;
         width: 100%;
-        height: 80px; 
         background-color: #1f2937; 
         border-radius: 0.5rem; 
         padding: 1rem;
@@ -154,45 +155,153 @@ featured_image: "../assets/images/defaults/about_us.jpg"
       #marqueeContent {
         display: inline-flex;
         align-items: center;
-        white-space: nowrap; 
-        animation: slideLeft 10s linear infinite;
+        white-space: nowrap;
+        animation: slideLeft 15s linear infinite; /* Slower to see on mobile */
       }
       @keyframes slideLeft {
         0%   { transform: translateX(100%); }
         100% { transform: translateX(-100%); }
       }
+      /* On hover (desktop), pause animation; optional for mobile */
       #marqueeContainer:hover #marqueeContent {
         animation-play-state: paused;
       }
+      /* Adjust margin between logos */
       .logo-link {
-        margin-right: 3rem;
+        margin-right: 2rem;
+        flex-shrink: 0; /* ensures logos don't shrink on small screens */
       }
-    </style>
-    <div class="marquee bg-gradient-to-r from-pink-500 to-purple-500 rounded-md shadow p-4 overflow-hidden">
-      <div id="marqueeContent">
-        <a href="https://aurva.io" target="_blank" rel="noopener" class="logo-link transition hover:opacity-80">
-          <img 
-            src="https://m3sservices.s3.us-east-1.amazonaws.com/aurva.png"
-            alt="Aurva.io"
-            class="h-20 w-auto object-contain"
-          >
-        </a>
-        <a href="https://fyler.us" target="_blank" rel="noopener" class="logo-link transition hover:opacity-80">
-          <img 
-            src="https://m3sservices.s3.us-east-1.amazonaws.com/fyler.png"
-            alt="Fyler.us"
-            class="h-20 w-auto object-contain"
-          >
-        </a>
-        <a href="https://crio.do" target="_blank" rel="noopener" class="logo-link transition hover:opacity-80">
-          <img 
-            src="https://m3sservices.s3.us-east-1.amazonaws.com/crio_do.png"
-            alt="Crio.do"
-            class="h-20 w-auto object-contain"
-          >
-        </a>
+      /* Scale logos slightly smaller for mobile if they feel too big */
+      .logo-img {
+        height: 64px;    /* or 4rem */
+        width: auto;
+        object-fit: contain;
+      }
+      </style>
+      <div class="marquee bg-gradient-to-r from-pink-500 to-purple-500 rounded-md shadow p-4 overflow-hidden">
+              <div id="marqueeContent">
+          <!-- 1. Aimbridge Hospitality (USA) -->
+          <a href="https://www.aimbridgehospitality.com" target="_blank" rel="noopener" class="logo-link">
+            <img 
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/aimbridg.png"
+              alt="Aimbridge Hospitality (USA)"
+              class="logo-img"
+            >
+          </a>
+          <!-- 2. Apple Hospitality Reit (USA) -->
+          <a href="https://applehospitalityreit.com/" target="_blank" rel="noopener" class="logo-link">
+            <img 
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/apple_hospitality.png"
+              alt="Aimbridge Hospitality (USA)"
+              class="logo-img"
+            >
+          </a>
+          <!-- 3. Ascendas Pte Ltd. (Singapore) -->
+          <a href="https://www.capitaland-ascendasreit.com/en/our-portfolio/singapore.html" target="_blank" rel="noopener" class="logo-link">
+            <img 
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/ascendas.png"
+              alt="Ascendas Pte Ltd. (Singapore)"
+              class="logo-img"
+            >
+          </a>
+          <!-- 4. Aurva.io (with invert filter example) -->
+          <a style="filter: invert(100%);" href="https://aurva.io" target="_blank" rel="noopener" class="logo-link transition hover:opacity-80">
+            <img 
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/aurva.png"
+              alt="Aurva.io"
+              class="logo-img"
+            >
+          </a>
+          <!-- 5. BPEA Singapore (Singapore) -->
+          <a style="filter: invert(100%);" href="https://www.bpea.com.sg/" target="_blank" rel="noopener" class="logo-link">
+            <img 
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/bpea.png"
+              alt="BPEA Singapore (Singapore)"
+              class="logo-img"
+            >
+          </a>
+          <!-- 6. Crio.do (with invert filter example) -->
+          <a style="filter: invert(100%);" href="https://crio.do" target="_blank" rel="noopener" class="logo-link transition hover:opacity-100">
+            <img 
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/crio_do.png"
+              alt="Crio.do"
+              class="logo-img"
+            >
+          </a>
+          <!-- 7. Daiwa House Industry Co. Ltd. (Japan) -->
+          <a href="https://www.daiwa-house.co.jp/en/index.html" target="_blank" rel="noopener" class="logo-link">
+            <img 
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/daiwa_house.png"
+              alt="Daiwa House Industry Co. Ltd. (Japan)"
+              class="logo-img"
+            >
+          </a>
+          <!-- 8. DLF Limited (India) -->
+          <a href="https://www.dlf.in" target="_blank" rel="noopener" class="logo-link">
+            <img 
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/dlf.png"
+              alt="DLF Limited (India)"
+              class="logo-img"
+            >
+          </a>
+          <!-- 9. Gaw Capital Partners (Hong Kong) -->
+          <a href="https://www.gawcapital.com" target="_blank" rel="noopener" class="logo-link">
+            <img 
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/gaw.png"
+              alt="Gaw Capital Partners (Hong Kong)"
+              class="logo-img"
+            >
+          </a>
+          <!-- 10. Fyler.us (invert example) -->
+          <a style="filter: invert(100%);" href="https://fyler.us" target="_blank" rel="noopener" class="logo-link">
+            <img 
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/fyler.png"
+              alt="Fyler.us"
+              class="logo-img"
+            >
+          </a>
+          <!-- 11. Lowe Enterprises (USA) -->
+          <a href="https://www.lowe-re.com" target="_blank" rel="noopener" class="logo-link">
+            <img 
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/lowes.png"
+              alt="Lowe Enterprises (USA)"
+              class="logo-img"
+            >
+          </a>
+          <!-- 12. Standard Hotels (Singapore) -->
+          <a href="https://www.standardhotels.com" target="_blank" rel="noopener" class="logo-link">
+            <img 
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/standard_hotels.png"
+              alt="Standard Hotels (Singapore)"
+              class="logo-img"
+            >
+          </a>
+          <!-- 13. Seibu Prince Hotels and Resorts (Japan) -->
+          <a href="https://www.princehotels.com" target="_blank" rel="noopener" class="logo-link">
+            <img 
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/seibu_prince.png"
+              alt="Seibu Prince Hotels and Resorts (Japan)"
+              class="logo-img"
+            >
+          </a>
+          <!-- 14. Symphony International Holdings (Singapore) -->
+          <a href="https://www.symphonyasia.com" target="_blank" rel="noopener" class="logo-link">
+            <img 
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/symphony.png"
+              alt="Symphony International Holdings (Singapore)"
+              class="logo-img"
+            >
+          </a>
+          <!-- 15. Wyndham Hotels & Resorts (USA) -->
+          <a href="https://www.wyndhamhotels.com" target="_blank" rel="noopener" class="logo-link">
+            <img 
+               src="https://m3sservices.s3.us-east-1.amazonaws.com/wyndham.png"
+              alt="Wyndham Hotels & Resorts (USA)"
+              class="logo-img"
+            >
+          </a>
+        </div>
       </div>
-    </div>
     <p class="mt-4 text-gray-300">
       <em>
         Our clients range from innovative startups to established enterprises,
