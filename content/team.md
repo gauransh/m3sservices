@@ -6,7 +6,6 @@ description: "Meet the Leaders Driving M3S Services Forward"
 featured_image: "../assets/images/defaults/about_us.jpg"
 ---
 
-# Our Team
 > Our leadership combines decades of experience in AI, business operations, and strategic investments. Meet the people guiding M3S Services to shape the future of global consulting.
 
 <style>
