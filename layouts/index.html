@@ -10,7 +10,6 @@
   defer
 ></script>
 
-
 <!-- Hero Section -->
 <div class="relative isolate bg-gray-900 text-white overflow-hidden">
   <!-- Gradient Blur (Top) -->
@@ -63,6 +62,126 @@
       </div>
       </div>
 
+      <!-- MARQUEE: Our Valued Customers -->
+      <section class="py-12 bg-section-dark py-8 sm:py-12 text-center">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <style>
+            #marqueeContainer {
+              position: relative; 
+              overflow: hidden;
+              width: 100%;
+              height: 80px; 
+              background-color: #1f2937; 
+              border-radius: 0.5rem; 
+              padding: 1rem;
+            }
+            #marqueeContent {
+              display: inline-flex;
+              align-items: center;
+              white-space: nowrap; 
+              animation: slideLeft 10s linear infinite;
+            }
+            @keyframes slideLeft {
+              0%   { transform: translateX(100%); }
+              100% { transform: translateX(-100%); }
+            }
+            #marqueeContainer:hover #marqueeContent {
+              animation-play-state: paused;
+            }
+            .logo-link {
+              margin-right: 3rem;
+            }
+          </style>
+        <div class="mb-12">
+          <div 
+            class="marquee bg-gradient-to-r from-pink-200 to-purple-200 
+                      rounded-md shadow px-8 py-8 overflow-hidden inline-block"
+          >
+          <h2 class="text-2xl font-bold text-white mb-4">Trusted By</h2>
+            <div id="marqueeContent">
+
+              <!-- 1. Aimbridge Hospitality (USA) -->
+              <a href="https://www.aimbridgehospitality.com" target="_blank" rel="noopener" class="logo-link">
+                <img 
+                  src="https://m3sservices.s3.us-east-1.amazonaws.com/aimbridg.png"
+                  alt="Aimbridge Hospitality (USA)"
+                  class="h-20 w-auto object-contain"
+                >
+              </a>
+              <a style="filter: invert(100%);" href="https://aurva.io" target="_blank" rel="noopener" class="logo-link transition hover:opacity-80">
+                <img 
+                  src="https://m3sservices.s3.us-east-1.amazonaws.com/aurva.png"
+                  alt="Aurva.io"
+                  class="h-20 w-auto object-contain"
+                >
+              </a>
+              <a style="filter: invert(100%);" href="https://crio.do" target="_blank" rel="noopener" class="logo-link transition hover:opacity-100">
+                  <img 
+                    src="https://m3sservices.s3.us-east-1.amazonaws.com/crio_do.png"
+                    alt="Crio.do"
+                    class="h-20 w-auto object-contain"
+                  >
+                </a>
+              <a href="https://www.dlf.in" target="_blank" rel="noopener" class="logo-link">
+                <img 
+                  src="https://m3sservices.s3.us-east-1.amazonaws.com/dlf.png"
+                  alt="DLF Limited (India)"
+                  class="h-20 w-auto object-contain"
+                >
+              </a>
+              <a href="https://www.gawcapital.com" target="_blank" rel="noopener" class="logo-link">
+                <img 
+                  src="https://m3sservices.s3.us-east-1.amazonaws.com/gaw.png"
+                  alt="Gaw Capital Partners (Hong Kong)"
+                  class="h-20 w-auto object-contain"
+                >
+              </a>
+              <a style="filter: invert(100%);" href="https://fyler.us" target="_blank" rel="noopener" class="logo-link">
+                <img 
+                  src="https://m3sservices.s3.us-east-1.amazonaws.com/fyler.png"
+                  alt="Fyler.us"
+                  class="h-20 w-auto object-contain"
+                >
+              </a>
+              <!-- 8. Lowe Enterprises (USA) -->
+              <a href="https://www.lowe-re.com" target="_blank" rel="noopener" class="logo-link">
+                <img 
+                  src="https://m3sservices.s3.us-east-1.amazonaws.com/lowes.png"
+                  alt="Lowe Enterprises (USA)"
+                  class="h-20 w-auto object-contain"
+                >
+              </a>
+
+              <!-- 9. Standard Hotels (Singapore) -->
+              <a href="https://www.standardhotels.com" target="_blank" rel="noopener" class="logo-link">
+                <img 
+                  src="https://m3sservices.s3.us-east-1.amazonaws.com/standard_hotels.png"
+                  alt="Standard Hotels (Singapore)"
+                  class="h-20 w-auto object-contain"
+                >
+              </a>
+
+              <!-- 10. Seibu Prince Hotels and Resorts (Japan) -->
+              <a href="https://www.princehotels.com" target="_blank" rel="noopener" class="logo-link">
+                <img 
+                  src="https://m3sservices.s3.us-east-1.amazonaws.com/seibu_prince.png"
+                  alt="Seibu Prince Hotels and Resorts (Japan)"
+                  class="h-20 w-auto object-contain"
+                >
+              </a>
+
+              <!-- 11. Symphony International Holdings (Singapore) -->
+              <a href="https://www.symphonyasia.com" target="_blank" rel="noopener" class="logo-link">
+                <img 
+                  src="https://m3sservices.s3.us-east-1.amazonaws.com/symphony.png"
+                  alt="Symphony International Holdings (Singapore)"
+                  class="h-20 w-auto object-contain"
+                >
+              </a>
+            </div>
+        </div>
+      </section>
+
       <!-- Optional hero image using .Site.Params.og_image -->
       {{ $p1image := resources.Get .Site.Params.og_image }}
       {{ with $p1image }}
@@ -77,35 +196,6 @@
           >
         {{ end }}
       {{ end }}
-    </div>
-  </div>
-
-  <!-- Gradient Blur (Bottom) -->
-  <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-50 transform-gpu 
-              overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-       aria-hidden="true">
-    <div 
-      class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] 
-             -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] 
-             opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-      style="clip-path: polygon(
-        74.1% 44.1%,
-        100% 61.6%,
-        97.5% 26.9%,
-        85.5% 0.1%,
-        80.7% 2%,
-        72.5% 32.5%,
-        60.2% 62.4%,
-        52.4% 68.1%,
-        47.5% 58.3%,
-        45.2% 34.5%,
-        27.5% 76.7%,
-        0.1% 64.9%,
-        17.9% 100%,
-        27.6% 76.8%,
-        76.1% 97.7%,
-        74.1% 44.1%
-      );">
     </div>
   </div>
 </div>
@@ -277,6 +367,7 @@
     </div> -->
   </div>
 </section>
+
 
 <!-- Swiper Initialization -->
 <script>
