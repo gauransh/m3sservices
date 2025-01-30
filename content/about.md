@@ -311,6 +311,8 @@ featured_image: "../assets/images/defaults/about_us.jpg"
   </div>
 </section>
 
+---
+
 <!-- FINAL CTA -->
 <section class="bg-section-slight py-12 text-center">
   <div class="mx-auto max-w-3xl">

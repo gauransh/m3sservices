@@ -14,15 +14,21 @@ featured_image: ../assets/images/defaults/about_us.jpg
       <div class="space-y-5">
         <div>
           <h3 class="text-lg text-white font-semibold">Canada (British Columbia)</h3>
-          <p class="text-gray-400">126-7295 Moffatt Road, Richmond, BC V6Y 3E5</p>
+          <address class="text-gray-400">126-7295 Moffatt Road
+          <br>Richmond
+          <br>BC V6Y 3E5</address>
         </div>
         <div>
           <h3 class="text-lg text-white font-semibold">United States (Maryland)</h3>
-          <p class="text-gray-400">3707 Bethnal Way, Silver Spring, MD 20906</p>
+          <address class="text-gray-400">3707 Bethnal Way
+          <br>Silver Spring
+          <br>MD 20906</address>
         </div>
         <div>
           <h3 class="text-lg text-white font-semibold">United States (Washington)</h3>
-          <p class="text-gray-400">500 Grover Road, Lynden, WA 98264</p>
+          <address class="text-gray-400">912 Alabama Street
+          <br>Bellingham
+          <br>WA 982229</address>
         </div>
       </div>
     </div>

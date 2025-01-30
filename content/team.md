@@ -127,16 +127,13 @@ featured_image: "../assets/images/defaults/about_us.jpg"
         </div>
       </details>
     </div>
-  </div>
-
-  <!-- 3) Sunit Tandon -->
-  
+  </div>  
 </div>
 
 ---
 
-## Ready to Work With the Best?
-
+<section class="bg-gray-900 py-12">
+<h2 class="text-4xl font-bold text-white text-center mb-8">Ready to Work With the Best?</h2>
 <div class="mt-12 text-center">
   <p class="text-lg text-gray-300 mb-6">
     Curious how our dedicated team can transform your next project or investment strategy?
@@ -150,6 +147,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
     Book a Call
   </a>
 </div>
+</section>
 
 <script>
 // Animate <details> expansions

@@ -225,8 +225,6 @@ featured_image: "../assets/images/defaults/about_us.jpg"
     </div>
 </section>
   
-
-
   <!-- Dynamic quotes in a multi-column grid (example from previous layout) -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
     <!-- Featured quote spanning both columns -->
@@ -325,6 +323,8 @@ featured_image: "../assets/images/defaults/about_us.jpg"
   }
   </style>
   
+
+
   <section class="bg-section-dark py-8 sm:py-12 text-center">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- Container now uses an ID so we can style it with the updated CSS -->

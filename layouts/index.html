@@ -108,11 +108,11 @@
   }
   </style>
   
-  <section class="bg-gray-500 py-8 sm:py-12 text-center">
+  <section class="bg-gray-500 py-4 sm:py-6 text-center">
 
     <div class="mx-auto max-w-7xl bg-gradient-to-r sm:px-6 lg:px-8">
       <!-- Container now uses an ID so we can style it with the updated CSS -->
-      <div class="marquee bg-gradient-to-r from-pink-500 to-purple-500 rounded-md shadow p-4 overflow-hidden">
+      <div id="marqueeContainer"  class="mx-auto my-4">
         <h2 class="text-2xl font-bold text-white mb-4">Trusted By</h2>
         <div id="marqueeContent">
           <!-- 1. Aimbridge Hospitality (USA) -->
@@ -239,30 +239,11 @@
       </div>
     </div>
   </section>
-  
-
-      <!-- Optional hero image using .Site.Params.og_image -->
-      {{ $p1image := resources.Get .Site.Params.og_image }}
-      {{ with $p1image }}
-        {{ with .Fill (printf "%dx%d Center webp q90" 2432 1442) }}
-          <img
-            src="{{ .RelPermalink }}"
-            alt="Hero Visual"
-            width="2432"
-            height="1442"
-            class="mx-auto mt-16 rounded-md bg-white/5 shadow-2xl 
-                   ring-2 ring-white/10 sm:mt-24"
-          >
-        {{ end }}
-      {{ end }}
-    </div>
-  </div>
-</div>
-
 <!-- Services Section (Swiper Slider with Heroicons) -->
-<section class="bg-gray-900 py-12 sm:py-16">
+<section class="bg-gray-900 py-8 sm:py-12 relative">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <div class="relative swiper mySwiper group">
+    <img src="http://localhost:1313/images/defaults/featured_mountain_image_hu_41ca1ccceb54c6fc.webp" class="hero-image w-full" alt="Hero Visual">
+    <div class="swiper mySwiper group">
 
       <!-- Swiper Wrapper -->
       <div class="swiper-wrapper">
@@ -439,34 +420,52 @@
   </div>
 </section>
 
+<style>
+  .swiper.mySwiper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1200px;
+    z-index: 10;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
 
-<!-- Swiper Initialization -->
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 1.2rem;
+  }
+
+  .swiper-pagination-bullet {
+    background: white;
+  }
+</style>
+
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     new Swiper('.mySwiper', {
-      // Loop & Autoplay
       loop: true,
-      speed: 400,            // Faster transition (default ~300ms, we use 350ms here)
-      effect: 'fade',        // Seamless fade effect
-      fadeEffect: {
-        crossFade: true,     // Cross-fade slides for smooth transitions
-      },
-      autoplay: {
-        delay: 2000,         // 2s between slides for a snappier feel
-        disableOnInteraction: false,
-      },
-      
-      // Show multiple slides in a cool 3D style
+      speed: 400,
       effect: 'coverflow',
       coverflowEffect: {
-        rotate: 50,
+        rotate: 30,
         stretch: 0,
-        depth: 150,
+        depth: 100,
         modifier: 1,
-        slideShadows: false, // or true if you like shadows
+        slideShadows: false,
       },
-  
-      // Pagination & Navigation
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -475,32 +474,24 @@
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
-      
-      // Responsive breakpoints: show more slides on bigger screens
       breakpoints: {
         640: {
-          slidesPerView: 1, // On small screens, 1 slide at a time
-          spaceBetween: 0
+          slidesPerView: 1,
+          spaceBetween: 20
         },
         1024: {
-          slidesPerView: 2, // On large screens, 2 slides in view
+          slidesPerView: 2,
           spaceBetween: 30
         }
       },
-  
-      // Grab-cursor for a more modern feel
       grabCursor: true,
-  
-      // Pause autoplay on hover (optional)
-      on: {
-        init() {
-          const swiperEl = this.el;
-          swiperEl.addEventListener('mouseenter', () => this.autoplay.stop());
-          swiperEl.addEventListener('mouseleave', () => this.autoplay.start());
-        },
-      },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+      }
     });
   });
-  </script>  
+</script>  
 
 {{ end }}
