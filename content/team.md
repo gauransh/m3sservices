@@ -40,7 +40,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
     <div class="relative mb-4 md:mb-0 w-32 h-32 mx-auto md:mx-0">
       <div class="diamond-wrapper"></div>
       <img 
-        src="https://m3sservices.s3.amazonaws.com/sunit.jpg"
+        src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/sunit.jpg"
         alt="Sunit Tandon"
         class="rounded-full w-32 h-32 object-cover"
       />
@@ -71,7 +71,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
     <div class="relative mb-4 md:mb-0 w-32 h-32 mx-auto md:mx-0">
       <div class="diamond-wrapper"></div>
       <img 
-        src="https://m3sservices.s3.amazonaws.com/gauransh.jpg" 
+        src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/gauransh.jpg" 
         alt="Gauransh Tandon" 
         class="rounded-full w-32 h-32 object-cover"
       />
@@ -81,7 +81,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
       <h3 class="text-2xl font-bold text-white">Gauransh Tandon</h3>
       <p class="text-md text-pink-400 font-semibold">AI & ML Executive</p>
       <p class="mt-2 text-gray-300">
-        With 10+ years of experience software engineering and AL/ML, Gauransh guides our AI/ML innovations with deep expertise in cloud architecture and DevOps.
+        With 10+ years of experience software engineering and AI/ML, Gauransh guides our AI/ML innovations with deep expertise in cloud architecture and DevOps.
       </p>
       <!-- Read More Toggle -->
       <details class="mt-3 animate-details">
@@ -103,7 +103,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
     <div class="relative mb-4 md:mb-0 w-32 h-32 mx-auto md:mx-0">
       <div class="diamond-wrapper"></div>
       <img 
-        src="https://m3sservices.s3.amazonaws.com/pranav.jpg"
+        src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/pranav.jpg"
         alt="Pranav Tandon"
         class="rounded-full w-32 h-32 object-cover"
       />

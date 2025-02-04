@@ -12,7 +12,7 @@ enableInlineShortcodes: true
 
 params:
   author: "M3S Services Inc. Team"
-  author_image: https://m3sservices.s3.amazonaws.com/logo_m3s.png
+  author_image: https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/logo_m3s.png
   og_image: /images/defaults/featured_mountain_image.jpg
   moto: "M3S Services"
   description: "Empowering Your Business with Expert Consultancy"
