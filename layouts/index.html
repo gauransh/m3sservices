@@ -239,176 +239,128 @@
       </div>
     </div>
   </section>
-<!-- Services Section (Swiper Slider with Heroicons) -->
+<!-- Services Section -->
 <section class="bg-gray-900 py-12 sm:py-16 relative">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <!-- Background image -->
     <div class="relative">
       <img 
         src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/featured_mountain_image.jpg" 
-        class="w-full h-[400px] object-cover rounded-lg opacity-25" 
+        class="w-full h-64 md:h-[400px] object-cover rounded-lg opacity-25" 
         alt="Hero Visual"
       >
-      <div class="swiper mySwiper group absolute inset-0">
-
-      <!-- Swiper Wrapper -->
-      <div class="swiper-wrapper">
-        <!-- Slide: Software & AI/ML -->
-        <div class="swiper-slide flex flex-col justify-center items-center
-        bg-gray-800 rounded-md p-6 shadow-md hover:shadow-xl 
-        min-h-[300px] transition">
-          <div class="space-y-4 bg-gray-800 rounded-md p-6 shadow transition hover:shadow-lg">
-            <!-- Heroicons CPU for AI/ML -->
-            <div class="flex items-center space-x-3">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                   viewBox="0 0 30 30" stroke-width="1.5"
-                   stroke="currentColor" class="h-6 w-6 text-white">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M9 4.5V3m3 1.5V3m3 1.5V3m3 7.5h1.5M18 15h1.5M18 18h1.5M6 10.5H4.5M6 13.5H4.5M6 16.5H4.5m3.75
-                        -6.75h6.75c.414 0 .75.336.75.75v6.75c0 .414-.336.75-.75.75H9.75a.75.75 0 01-.75-.75v-6.75c0-.414.336-.75.75
-                        -.75z"/>
-              </svg>
-              <h2 class="text-2xl font-bold text-white">Software & AI/ML</h2>
+      
+      <!-- Single Responsive Swiper -->
+      <div class="swiper services-swiper mt-4 md:mt-0 md:absolute md:top-0 md:left-0 md:right-0 md:bottom-0 md:flex md:items-center">
+        <div class="swiper-wrapper">
+          <!-- Slide: Software & AI/ML -->
+          <div class="swiper-slide">
+            <div class="bg-gray-800 rounded-md p-6 shadow-md hover:shadow-xl transition">
+              <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                  <!-- CPU Icon -->
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" />
+                  </svg>
+                  <h2 class="text-2xl font-bold text-white">Software & AI/ML</h2>
+                </div>
+                <p class="text-gray-300">
+                  Develop bespoke software and integrate cutting-edge AI/ML
+                  solutions to streamline ops, enhance decision-making,
+                  and build lasting advantages.
+                </p>
+              </div>
             </div>
-            <p class="text-gray-300">
-              Develop bespoke software and integrate cutting-edge AI/ML
-              solutions to streamline ops, enhance decision-making,
-              and build lasting advantages.
-            </p>
+          </div>
+          <!-- Slide: Business Operations -->
+          <div class="swiper-slide">
+            <div class="bg-gray-800 rounded-md p-6 shadow-md hover:shadow-xl transition">
+              <div class="flex items-center space-x-3">
+                <!-- Cog Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281Z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
+                <h2 class="text-2xl font-bold text-white">Business Operations</h2>
+              </div>
+              <p class="text-gray-300">
+                Optimize workflows, reduce costs, and improve service delivery.
+                Our experts turn inefficiencies into competitive strengths.
+              </p>
+            </div>
+          </div>
+          <!-- Slide: Leadership & Management -->
+          <div class="swiper-slide">
+            <div class="bg-gray-800 rounded-md p-6 shadow-md hover:shadow-xl transition">
+              <div class="flex items-center space-x-3">
+                <!-- Users Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+                </svg>
+                <h2 class="text-2xl font-bold text-white">Leadership & Management</h2>
+              </div>
+              <p class="text-gray-300">
+                Strengthen communication, strategic thinking, and motivation.
+                Our leadership solutions empower teams to drive sustainable success.
+              </p>
+            </div>
+          </div>
+          <!-- Slide: Financial Management -->
+          <div class="swiper-slide">
+            <div class="bg-gray-800 rounded-md p-6 shadow-md hover:shadow-xl transition">
+              <div class="flex items-center space-x-3">
+                <!-- Currency Dollar Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+                <h2 class="text-2xl font-bold text-white">Financial Management</h2>
+              </div>
+              <p class="text-gray-300">
+                Gain deep financial insights with our planning and analysis
+                services, helping you make informed decisions for growth.
+              </p>
+            </div>
+          </div>
+          <!-- Slide: Sales & Marketing -->
+          <div class="swiper-slide">
+            <div class="bg-gray-800 rounded-md p-6 shadow-md hover:shadow-xl transition">
+              <div class="flex items-center space-x-3">
+                <!-- Megaphone Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 1 1 0-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 0 1-1.44-4.282m3.102.069a18.03 18.03 0 0 1-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 0 1 8.835 2.535M10.34 6.66a23.847 23.847 0 0 0 8.835-2.535m0 0A23.74 23.74 0 0 0 18.795 3m.38 1.125a23.91 23.91 0 0 1 1.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 0 0 1.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 0 1 0 3.46" />
+                </svg>
+                <h2 class="text-2xl font-bold text-white">Sales & Marketing</h2>
+              </div>
+              <p class="text-gray-300">
+                Amplify brand visibility, capture market share, and increase 
+                revenue. Our end-to-end marketing solutions get you noticed
+                and keep customers engaged.
+              </p>
+            </div>
+          </div>
+          <!-- Slide: Investment Management -->
+          <div class="swiper-slide">
+            <div class="bg-gray-800 rounded-md p-6 shadow-md hover:shadow-xl transition">
+              <div class="flex items-center space-x-3">
+                <!-- Chart Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
+                </svg>
+                <h2 class="text-2xl font-bold text-white">Investment Management</h2>
+              </div>
+              <p class="text-gray-300">
+                Our global expertise helps you navigate complex markets, 
+                ensuring maximum returns on investments and robust risk mitigation.
+              </p>
+            </div>
           </div>
         </div>
-
-        <!-- Slide: Business Operations -->
-        <div class="swiper-slide flex flex-col justify-center items-center
-        bg-gray-800 rounded-md p-6 shadow-md hover:shadow-xl 
-        min-h-[300px] transition">
-          <div class="space-y-4 bg-gray-800 rounded-md p-6 shadow transition hover:shadow-lg">
-            <!-- Heroicons Cog6Tooth for Business Ops -->
-            <div class="flex items-center space-x-3">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                   viewBox="0 0 30 30" stroke-width="1.5"
-                   stroke="currentColor" class="h-6 w-6 text-white">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M4.5 12a7.5 7.5 0 0115 0 7.5 7.5 0 01
-                         -15 0zm7.5-6V3m3.182 
-                         1.318l2.121-2.12m-5.303 
-                         9.302h3.75M15.75 12a3.75 
-                         3.75 0 11-7.5 0 
-                         3.75 3.75 0 017.5 0z"/>
-              </svg>
-              <h2 class="text-2xl font-bold text-white">Business Operations</h2>
-            </div>
-            <p class="text-gray-300">
-              Optimize workflows, reduce costs, and improve service delivery.
-              Our experts turn inefficiencies into competitive strengths.
-            </p>
-          </div>
-        </div>
-
-        <!-- Slide: Leadership & Management -->
-        <div class="swiper-slide flex flex-col justify-center items-center
-        bg-gray-800 rounded-md p-6 shadow-md hover:shadow-xl 
-        min-h-[300px] transition">
-          <div class="space-y-4 bg-gray-800 rounded-md p-6 shadow transition hover:shadow-lg">
-            <!-- Heroicons UserGroup for Leadership -->
-            <div class="flex items-center space-x-3">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" 
-                   viewBox="0 0 30 30" stroke-width="1.5" 
-                   stroke="currentColor" class="h-6 w-6 text-white">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M17 20h5v-2a4 4 0 00-4
-                         -4h-1.5m-1 6h-9a4 4 0 00-4
-                         4v2h18v-2a4 4 0 00-4-4H5zm0 
-                         0a4 4 0 014-4"/>
-              </svg>
-              <h2 class="text-2xl font-bold text-white">Leadership & Management</h2>
-            </div>
-            <p class="text-gray-300">
-              Strengthen communication, strategic thinking, and motivation.
-              Our leadership solutions empower teams to drive sustainable success.
-            </p>
-          </div>
-        </div>
-
-        <!-- Slide: Financial Management -->
-        <div class="swiper-slide flex flex-col justify-center items-center
-        bg-gray-800 rounded-md p-6 shadow-md hover:shadow-xl 
-        min-h-[300px] transition">
-          <div class="space-y-4 bg-gray-800 rounded-md p-6 shadow transition hover:shadow-lg">
-            <!-- Heroicons CurrencyDollar for Finance -->
-            <div class="flex items-center space-x-3">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                   viewBox="0 0 30 30" stroke-width="1.5"
-                   stroke="currentColor" class="h-6 w-6 text-white">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M12 8c-1.657 0-3 .895-3 2s1.343 
-                         2 3 2 3 .895 3 2-1.343 2-3 2m0-8V3m0 
-                         14v2.75"/>
-              </svg>
-              <h2 class="text-2xl font-bold text-white">Financial Management</h2>
-            </div>
-            <p class="text-gray-300">
-              Gain deep financial insights with our planning and analysis
-              services, helping you make informed decisions for growth.
-            </p>
-          </div>
-        </div>
-
-        <!-- Slide: Sales & Marketing -->
-        <div class="swiper-slide flex flex-col justify-center items-center
-        bg-gray-800 rounded-md p-6 shadow-md hover:shadow-xl 
-        min-h-[300px] transition">
-          <div class="space-y-4 bg-gray-800 rounded-md p-6 shadow transition hover:shadow-lg">
-            <!-- Heroicons Megaphone for Marketing -->
-            <div class="flex items-center space-x-3">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" 
-                   viewBox="0 0 30 30" stroke-width="1.5" 
-                   stroke="currentColor" class="h-6 w-6 text-white">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M3.75 8.25l16.5-3v13.5l-16.5-3v
-                         -7.5zm0 7.5v1.5a2.25 2.25 0 002.25 
-                         2.25h1.5a2.25 2.25 0 002.25 
-                         -2.25v-2.25"/>
-              </svg>
-              <h2 class="text-2xl font-bold text-white">Sales & Marketing</h2>
-            </div>
-            <p class="text-gray-300">
-              Amplify brand visibility, capture market share, and increase 
-              revenue. Our end-to-end marketing solutions get you noticed
-              and keep customers engaged.
-            </p>
-          </div>
-        </div>
-
-        <!-- Slide: Investment Management -->
-        <div class="swiper-slide flex flex-col justify-center items-center
-        bg-gray-800 rounded-md p-6 shadow-md hover:shadow-xl 
-        min-h-[300px] transition">
-          <div class="space-y-4 bg-gray-800 rounded-md p-6 shadow transition hover:shadow-lg">
-            <!-- Heroicons ArrowTrendingUp for Investment -->
-            <div class="flex items-center space-x-3">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                   viewBox="0 0 30 30" stroke-width="1.5"
-                   stroke="currentColor" class="h-6 w-6 text-white">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M2.25 18L9 11.25l4.5 4.5
-                         7.5-7.5M15 4.5h6v6"/>
-              </svg>
-              <h2 class="text-2xl font-bold text-white">Investment Management</h2>
-            </div>
-            <p class="text-gray-300">
-              Our global expertise helps you navigate complex markets, 
-              ensuring maximum returns on investments and robust risk mitigation.
-            </p>
-          </div>
-        </div>
-
-      </div><!-- end .swiper-wrapper -->
-
-      <!-- Pagination (dots) -->
-      <div class="swiper-pagination text-white"></div>
-      <!-- Arrows (visible on hover) -->
-      <div class="swiper-button-next opacity-10 hover:opacity-100 hidden group-hover:block text-white"></div>
-      <div class="swiper-button-prev opacity-10 hover:opacity-100 hidden group-hover:block text-white"></div>
+        
+        <!-- Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -509,21 +461,26 @@
   </div>
 </section>
 
-
 <style>
-  .swiper.mySwiper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    max-width: 1200px;
-    z-index: 10;
+  /* Swiper Styles */
+  .services-swiper {
+    width: 100%;
     padding: 2rem;
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
-
+  
+  /* Desktop positioning */
+  @media (min-width: 768px) {
+    .services-swiper {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  
   .swiper-button-next,
   .swiper-button-prev {
     color: white;
@@ -545,17 +502,11 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    new Swiper('.mySwiper', {
+    const swiper = new Swiper('.services-swiper', {
       loop: true,
       speed: 400,
-      effect: 'coverflow',
-      coverflowEffect: {
-        rotate: 30,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: false,
-      },
+      slidesPerView: 1,
+      spaceBetween: 20,
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -565,13 +516,17 @@
         prevEl: '.swiper-button-prev',
       },
       breakpoints: {
-        640: {
-          slidesPerView: 1,
-          spaceBetween: 20
-        },
-        1024: {
+        // Mobile first approach
+        768: {
           slidesPerView: 2,
-          spaceBetween: 30
+          effect: 'coverflow',
+          coverflowEffect: {
+            rotate: 30,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: false,
+          }
         }
       },
       grabCursor: true,
