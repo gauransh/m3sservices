@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat with Our AI Chatbot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Chatbot container styles */
+    #chatbot-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      max-width: 300px;
+      width: 100%;
+      background: #1f2937;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      font-family: sans-serif;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    /* Minimized state hides the chat log and input container */
+    #chatbot-container.minimized #chat-log,
+    #chatbot-container.minimized #chat-input-container {
+      display: none;
+    }
+    /* Chat header with toggle icon and notification badge */
+    #chatbot-header {
+      background: #4f46e5;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+      position: relative;
+    }
+    /* Toggle icon in the header */
+    #chatbot-header .toggle-icon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    /* Notification badge styling */
+    #chat-notification {
+      position: absolute;
+      top: 5px;
+      left: 10px;
+      background: red;
+      color: white;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      font-size: 10px;
+      text-align: center;
+      line-height: 16px;
+      display: none;
+    }
+    #chat-log {
+      height: 200px;
+      overflow-y: auto;
+      padding: 10px;
+      background: #111827;
+      color: #d1d5db;
+    }
+    .message {
+      margin-bottom: 10px;
+      padding: 5px 8px;
+      border-radius: 4px;
+    }
+    .message.user {
+      background: #3b82f6;
+      text-align: right;
+    }
+    .message.bot {
+      background: #6b7280;
+      text-align: left;
+    }
+    /* Loading message with spinner */
+    .message.loading {
+      display: flex;
+      align-items: center;
+      font-style: italic;
+      opacity: 0.7;
+    }
+    .spinner {
+      border: 4px solid #f3f3f3; /* Light grey */
+      border-top: 4px solid #4f46e5; /* Blue */
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      animation: spin 1s linear infinite;
+      margin-right: 8px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    #chat-input-container {
+      display: flex;
+      border-top: 1px solid #374151;
+    }
+    #chat-input {
+      flex: 1;
+      border: none;
+      padding: 10px;
+      outline: none;
+      background: #1f2937;
+      color: #d1d5db;
+    }
+    #chat-send {
+      background: #4f46e5;
+      border: none;
+      color: white;
+      padding: 0 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Chatbot Widget -->
+  <div id="chatbot-container" class="minimized">
+    <div id="chatbot-header">
+      Chat with us
+      <span id="chat-notification">!</span>
+      <span class="toggle-icon">▲</span>
+    </div>
+    <div id="chat-log"></div>
+    <div id="chat-input-container">
+      <input type="text" id="chat-input" placeholder="Type your message..." />
+      <button id="chat-send">Send</button>
+    </div>
+  </div>
+
+  <script>
+    // Cloudflare Worker URL and API key.
+    // Ensure that the API key here ("sk-abc123") matches your Worker environment.
+    const WORKER_URL = 'https://m3schatbot.gauranshtandon.workers.dev/';
+    const API_KEY = 'sk-1a9d8c642b7e53091f23g6hilk5nom47';
+
+    // Get references to DOM elements.
+    const chatbotContainer = document.getElementById('chatbot-container');
+    const chatbotHeader = document.getElementById('chatbot-header');
+    const chatLog = document.getElementById('chat-log');
+    const chatInput = document.getElementById('chat-input');
+    const chatSend = document.getElementById('chat-send');
+    const toggleIcon = chatbotHeader.querySelector('.toggle-icon');
+    const chatNotification = document.getElementById('chat-notification');
+
+    let isMinimized = true;
+    let unreadCount = 0;
+
+    // Conversation state for fallback responses:
+    // "initial" – no conversation yet; any first input is treated as greeting.
+    // "contact" – chatbot has asked for email or name.
+    // "done" – conversation complete; booking info provided.
+    let fakeConversationState = "initial";
+
+    // Toggle function to show/hide chat body.
+    function toggleChat() {
+      isMinimized = !isMinimized;
+      if (isMinimized) {
+        chatbotContainer.classList.add('minimized');
+        toggleIcon.textContent = '▲';
+        // Clear notifications when opened.
+        chatNotification.style.display = 'none';
+        unreadCount = 0;
+      } else {
+        chatbotContainer.classList.remove('minimized');
+        toggleIcon.textContent = '▼';
+      }
+    }
+    chatbotHeader.addEventListener('click', toggleChat);
+
+    // Append a message to the chat log.
+    function appendMessage(sender, text) {
+      const messageDiv = document.createElement('div');
+      messageDiv.classList.add('message', sender);
+      messageDiv.textContent = text;
+      chatLog.appendChild(messageDiv);
+      chatLog.scrollTop = chatLog.scrollHeight;
+    }
+
+    // Improved fallback conversation using a simple state machine.
+    function getFakeResponse(userInput) {
+      const input = userInput.toLowerCase().trim();
+      if (fakeConversationState === "initial") {
+        // Treat any first input as a greeting.
+        fakeConversationState = "contact";
+        return "Hi there, welcome to M3S Services! How can we help you today? Please share your email or name so we can assist you further.";
+      } else if (fakeConversationState === "contact") {
+        // If the user says something negative...
+        if (input === "no" || input.includes("not interested") || input.includes("no thanks") || input === "nah") {
+          fakeConversationState = "done";
+          return "Understood. If you change your mind, you can always book a call here: https://cal.com/m3sservices/30min";
+        }
+        // If the user provides input of sufficient length or it matches an email pattern, assume it's contact info.
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailRegex.test(input) || input.length >= 3) {
+          fakeConversationState = "done";
+          return "Thank you! To book a call, please visit: https://cal.com/m3sservices/30min";
+        }
+        // Otherwise, ask for more information.
+        return "Could you please provide a valid email address or your name so we can assist you further?";
+      } else { // fakeConversationState === "done"
+        return "For further assistance, please visit: https://cal.com/m3sservices/30min";
+      }
+    }
+
+    // Function to send the user's prompt to the Cloudflare Worker.
+    async function sendMessage(prompt) {
+      const data = { prompt: prompt };
+      try {
+        const response = await fetch(WORKER_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-KEY': API_KEY
+          },
+          body: JSON.stringify(data)
+        });
+        console.log('Response status:', response.status);
+        if (!response.ok) {
+          const errorText = await response.text();
+          console.error("Response not OK:", errorText);
+          return "Sorry, something went wrong.";
+        }
+        try {
+          const jsonResponse = await response.json();
+          console.log('Raw JSON response:', jsonResponse);
+          if (jsonResponse.response && typeof jsonResponse.response.response === 'string') {
+            return jsonResponse.response.response;
+          }
+          console.error("JSON structure is not as expected:", jsonResponse);
+          return "Sorry, something went wrong.";
+        } catch (jsonError) {
+          const text = await response.text();
+          console.error('Error parsing JSON:', jsonError, 'Response text:', text);
+          return "Sorry, something went wrong.";
+        }
+      } catch (error) {
+        console.error('Fetch error:', error);
+        return "Sorry, something went wrong.";
+      }
+    }
+
+    // Event listener for the Send button with a loading spinner.
+    chatSend.addEventListener('click', async () => {
+      const prompt = chatInput.value.trim();
+      if (!prompt) return;
+      appendMessage('user', prompt);
+      chatInput.value = '';
+
+      // Append a loading message with spinner.
+      const loadingMessage = document.createElement('div');
+      loadingMessage.classList.add('message', 'bot', 'loading');
+      loadingMessage.innerHTML = '<span class="spinner"></span>Loading...';
+      chatLog.appendChild(loadingMessage);
+      chatLog.scrollTop = chatLog.scrollHeight;
+
+      // Try to get the API response.
+      let reply = await sendMessage(prompt);
+      // If the API response fails, use the fallback fake response.
+      if (reply === "Sorry, something went wrong.") {
+        reply = getFakeResponse(prompt);
+      }
+      
+      // Remove the loading message.
+      chatLog.removeChild(loadingMessage);
+      appendMessage('bot', reply);
+
+      // If the chat is minimized, update the notification badge.
+      if (isMinimized) {
+        unreadCount++;
+        chatNotification.textContent = unreadCount;
+        chatNotification.style.display = 'block';
+      }
+    });
+
+    // Allow sending by pressing the Enter key.
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        chatSend.click();
+      }
+    });
+  </script>
+</body>
+</html>
