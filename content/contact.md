@@ -109,7 +109,7 @@ featured_image: ../assets/images/defaults/about_us.jpg
       Prefer a direct conversation? Schedule a 30-minute call with us:
     </p>
     <a
-      href="https://cal.com/m3sservices/30min?month=2025-01&date=2025-01-27"
+      href="https://cal.com/m3sservices/30min"
       target="_blank"
       rel="noopener"
       class="inline-block rounded-md bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 text-sm font-semibold text-white transition hover:from-purple-500 hover:to-pink-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-500 focus-visible:ring-offset-2"

@@ -314,7 +314,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
     </p>
     <div class="mt-8">
       <a
-      href="https://cal.com/m3sservices/30min?month=2025-01&date=2025-01-27"
+      href="https://cal.com/m3sservices/30min"
       target="_blank"
       rel="noopener"
       class="inline-block rounded-md bg-gradient-to-r from-pink-500 to-purple-500 
