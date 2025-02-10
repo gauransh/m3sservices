@@ -55,7 +55,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
       <a href="https://aurva.io" target="_blank" rel="noopener noreferrer">
         <div class="bg-gradient-to-r from-pink-500 to-purple-500 p-8 rounded-lg">
           <img 
-            src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/aurva.png" 
+            src="https://m3sservices.s3.us-east-1.amazonaws.com/aurva.png" 
             alt="Aurva.io Logo" 
             class="h-16 w-auto"
           />
@@ -84,7 +84,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
     <div class="my-12 rounded-lg overflow-hidden bg-gray-800 p-6">
       <h3 class="text-xl font-bold text-white mb-4 text-center">See It in Action</h3>
       {{< s3-video 
-        url="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/aurva.mp4" 
+        url="https://m3sservices.s3.us-east-1.amazonaws.com/aurva.mp4" 
         title="Aurva.io PII detection demo" 
       >}}
       <p class="text-gray-400 text-sm mt-2 text-center">

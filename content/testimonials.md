@@ -137,7 +137,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
           <!-- 1. Aimbridge Hospitality (USA) -->
           <a href="https://www.aimbridgehospitality.com" target="_blank" rel="noopener" class="logo-link">
             <img 
-              src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/aimbridg.png"
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/aimbridg.png"
               alt="Aimbridge Hospitality (USA)"
               class="logo-img"
             >
@@ -145,7 +145,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
           <!-- 2. Apple Hospitality Reit (USA) -->
           <a href="https://applehospitalityreit.com/" target="_blank" rel="noopener" class="logo-link">
             <img 
-              src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/apple_hospitality.png"
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/apple_hospitality.png"
               alt="Aimbridge Hospitality (USA)"
               class="logo-img"
             >
@@ -153,7 +153,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
           <!-- 3. Ascendas Pte Ltd. (Singapore) -->
           <a href="https://www.capitaland-ascendasreit.com/en/our-portfolio/singapore.html" target="_blank" rel="noopener" class="logo-link">
             <img 
-              src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/ascendas.png"
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/ascendas.png"
               alt="Ascendas Pte Ltd. (Singapore)"
               class="logo-img"
             >
@@ -161,7 +161,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
           <!-- 4. Aurva.io (with invert filter example) -->
           <a href="https://aurva.io" target="_blank" rel="noopener" class="logo-link transition hover:opacity-80">
             <img 
-              src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/aurva.png"
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/aurva.png"
               alt="Aurva.io"
               class="logo-img"
             >
@@ -169,7 +169,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
           <!-- 5. BPEA Singapore (Singapore) -->
           <a href="https://www.bpea.com.sg/" target="_blank" rel="noopener" class="logo-link">
             <img 
-              src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/bpea.png"
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/bpea.png"
               alt="BPEA Singapore (Singapore)"
               class="logo-img"
             >
@@ -177,7 +177,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
           <!-- 6. Crio.do (with invert filter example) -->
           <a style="filter: invert(100%);" href="https://crio.do" target="_blank" rel="noopener" class="logo-link transition hover:opacity-100">
             <img 
-              src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/crio_do.png"
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/crio_do.png"
               alt="Crio.do"
               class="logo-img"
             >
@@ -185,7 +185,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
           <!-- 7. Daiwa House Industry Co. Ltd. (Japan) -->
           <a href="https://www.daiwa-house.co.jp/en/index.html" target="_blank" rel="noopener" class="logo-link">
             <img 
-              src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/daiwa_house.png"
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/daiwa_house.png"
               alt="Daiwa House Industry Co. Ltd. (Japan)"
               class="logo-img"
             >
@@ -193,7 +193,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
           <!-- 8. DLF Limited (India) -->
           <a href="https://www.dlf.in" target="_blank" rel="noopener" class="logo-link">
             <img 
-              src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/dlf.png"
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/dlf.png"
               alt="DLF Limited (India)"
               class="logo-img"
             >
@@ -201,7 +201,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
           <!-- 9. Gaw Capital Partners (Hong Kong) -->
           <a href="https://www.gawcapital.com" target="_blank" rel="noopener" class="logo-link">
             <img 
-              src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/gaw.png"
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/gaw.png"
               alt="Gaw Capital Partners (Hong Kong)"
               class="logo-img"
             >
@@ -209,7 +209,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
           <!-- 10. Fyler.us (invert example) -->
           <a href="https://fyler.us" target="_blank" rel="noopener" class="logo-link">
             <img 
-              src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/fyler.png"
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/fyler.png"
               alt="Fyler.us"
               class="logo-img"
             >
@@ -217,7 +217,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
           <!-- 11. Lowe Enterprises (USA) -->
           <a href="https://www.lowe-re.com" target="_blank" rel="noopener" class="logo-link">
             <img 
-              src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/lowes.png"
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/lowes.png"
               alt="Lowe Enterprises (USA)"
               class="logo-img"
             >
@@ -225,7 +225,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
           <!-- 12. Standard Hotels (Singapore) -->
           <a href="https://www.standardhotels.com" target="_blank" rel="noopener" class="logo-link">
             <img 
-              src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/standard_hotels.png"
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/standard_hotels.png"
               alt="Standard Hotels (Singapore)"
               class="logo-img"
             >
@@ -233,7 +233,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
           <!-- 13. Seibu Prince Hotels and Resorts (Japan) -->
           <a href="https://www.princehotels.com" target="_blank" rel="noopener" class="logo-link">
             <img 
-              src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/seibu_prince.png"
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/seibu_prince.png"
               alt="Seibu Prince Hotels and Resorts (Japan)"
               class="logo-img"
             >
@@ -241,7 +241,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
           <!-- 14. Symphony International Holdings (Singapore) -->
           <a href="https://www.symphonyasia.com" target="_blank" rel="noopener" class="logo-link">
             <img 
-              src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/symphony.png"
+              src="https://m3sservices.s3.us-east-1.amazonaws.com/symphony.png"
               alt="Symphony International Holdings (Singapore)"
               class="logo-img"
             >
@@ -249,7 +249,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
           <!-- 15. Wyndham Hotels & Resorts (USA) -->
           <a href="https://www.wyndhamhotels.com" target="_blank" rel="noopener" class="logo-link">
             <img 
-               src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/wyndham.png"
+               src="https://m3sservices.s3.us-east-1.amazonaws.com/wyndham.png"
               alt="Wyndham Hotels & Resorts (USA)"
               class="logo-img"
             >

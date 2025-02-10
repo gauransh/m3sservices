@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Minimal Chatbot (Worker-Dependent)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <style>
     /* ====== Chatbot Container Styles ====== */
     #chatbot-container {
@@ -34,20 +33,17 @@
       box-shadow: 0 4px 6px rgba(236, 206, 206, 0.3);
       overflow: hidden;
     }
-
     /* Show/hide child elements based on minimized/expanded */
     #chatbot-icon { display: block; }
     #chatbot-content { display: none; }
     #chatbot-container.expanded #chatbot-icon { display: none; }
     #chatbot-container.expanded #chatbot-content { display: block; }
-
     /* Chatbot icon (minimized) */
     #chatbot-icon img {
       width: 40px;
       height: 40px;
       filter: brightness(1.2);
     }
-
     /* Header in expanded state */
     #chatbot-header {
       background: #4f46e5;
@@ -81,7 +77,6 @@
       line-height: 16px;
       display: none;
     }
-
     /* Chat Log area */
     #chat-log {
       height: 200px;
@@ -103,7 +98,6 @@
       background: #6b7280;
       text-align: left;
     }
-
     /* Input area */
     #chat-input-container {
       display: flex;
@@ -124,7 +118,6 @@
       padding: 0 15px;
       cursor: pointer;
     }
-
     /* Spinner */
     .spinner {
       border: 4px solid #f3f3f3;
@@ -147,16 +140,15 @@
     <!-- Minimized Circle Icon -->
     <div id="chatbot-icon">
       <img
-        src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/logo_m3s.png"
+        src="https://m3sservices.s3.us-east-1.amazonaws.com/logo_m3s.png"
         alt="M3S Logo"
       />
     </div>
-
     <!-- Expanded State -->
     <div id="chatbot-content">
       <div id="chatbot-header">
         <img
-          src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/logo_m3s.png"
+          src="https://m3sservices.s3.us-east-1.amazonaws.com/logo_m3s.png"
           alt="M3S Logo"
         />
         <span id="chat-notification">!</span>
@@ -178,6 +170,22 @@
     let isMinimized = true;
     let unreadCount = 0;
     let localChat   = []; // store user & bot messages
+
+    // --- PII Sanitization Helpers ---
+    function sanitizeText(text) {
+      // Replace email addresses with "[redacted]"
+      return text.replace(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}/gi, "[redacted]");
+    }
+    function sanitizeConversation(history) {
+      return history.map(msg => {
+        if (msg.user_question) {
+          return { user_question: sanitizeText(msg.user_question) };
+        } else if (msg.bot_answer) {
+          return { bot_answer: sanitizeText(msg.bot_answer) };
+        }
+        return msg;
+      });
+    }
 
     // DOM references
     const chatbotContainer = document.getElementById('chatbot-container');
@@ -223,8 +231,8 @@
       localChat.forEach(msg => {
         const msgDiv = document.createElement('div');
         msgDiv.classList.add('message', msg.role);
+        // For bot messages, allow HTML (e.g. links, formatted confirmation text)
         if (msg.role === 'bot') {
-          // interpret HTML for possible links
           msgDiv.innerHTML = msg.content;
         } else {
           msgDiv.textContent = msg.content;
@@ -234,14 +242,14 @@
       chatLog.scrollTop = chatLog.scrollHeight;
     }
 
-    // 4) Call Worker
+    // 4) Call Worker and parse response
     async function callWorker(userMessage) {
       try {
         const resp = await fetch(WORKER_URL, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'X-API-KEY': API_KEY // remove if not needed
+            'X-API-KEY': API_KEY
           },
           body: JSON.stringify({ prompt: userMessage })
         });
@@ -252,9 +260,19 @@
           return "Sorry, I'm having trouble right now.";
         }
 
-        // Expect { response: "...some text..." }
         const data = await resp.json();
-        return data.response || "No response from Worker.";
+        // If the worker returned a "response" field, then it's a plain text reply.
+        if (data.response) {
+          return data.response;
+        }
+        // Otherwise, if we have a booking result (status: success), extract its confirmation message.
+        if (data.status === "success" && data.data) {
+          // Use the confirmationMessage if provided; otherwise, fall back to a default message.
+          const confirmation = data.data.confirmationMessage ||
+            `Your call is scheduled for ${new Date(data.data.start).toLocaleString()}.`;
+          return confirmation;
+        }
+        return "No response from Worker.";
       } catch (err) {
         console.error("Fetch error:", err);
         return "Sorry, I'm having trouble connecting.";
@@ -271,9 +289,9 @@
       renderChat();
       chatInput.value = '';
 
-      // Show spinner
+      // Show spinner in bot message slot.
       const spinnerDiv = document.createElement('div');
-      spinnerDiv.classList.add('message','bot');
+      spinnerDiv.classList.add('message', 'bot');
       spinnerDiv.innerHTML = '<span class="spinner"></span> <span>...</span>';
       chatLog.appendChild(spinnerDiv);
       chatLog.scrollTop = chatLog.scrollHeight;
@@ -284,11 +302,11 @@
       // Remove spinner
       spinnerDiv.remove();
 
-      // Show Worker reply
+      // Display Worker reply
       localChat.push({ role: 'bot', content: workerReply });
       renderChat();
 
-      // If minimized, increment unread
+      // If minimized, update unread count.
       if (isMinimized) {
         unreadCount++;
         chatNotification.textContent = unreadCount;
@@ -301,7 +319,6 @@
       e.stopPropagation();
       handleSend();
     });
-
     chatInput.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
         handleSend();

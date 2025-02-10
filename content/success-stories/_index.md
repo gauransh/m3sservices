@@ -156,11 +156,11 @@ featured_image: "../assets/images/defaults/about_us.jpg"
         <a 
           href="/success-stories/fyler"
           class="case-study-card"
-          style="background-image: url('https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/legal.png');"
+          style="background-image: url('https://m3sservices.s3.us-east-1.amazonaws.com/legal.png');"
         >
           <div>
             <div class="flex items-center justify-between mb-4">
-              <img src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/fyler.png" alt="Fyler Logo" class="company-logo">
+              <img src="https://m3sservices.s3.us-east-1.amazonaws.com/fyler.png" alt="Fyler Logo" class="company-logo">
               <span class="text-pink-500 text-2xl">→</span>
             </div>
             <p class="text-gray-300">
@@ -177,11 +177,11 @@ featured_image: "../assets/images/defaults/about_us.jpg"
         <a
           href="/success-stories/aurva"
           class="case-study-card"
-          style="background-image: url('https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/security.png');"
+          style="background-image: url('https://m3sservices.s3.us-east-1.amazonaws.com/security.png');"
         >
           <div>
             <div class="flex items-center justify-between mb-4">
-              <img src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/aurva.png" alt="Aurva Logo" class="company-logo">
+              <img src="https://m3sservices.s3.us-east-1.amazonaws.com/aurva.png" alt="Aurva Logo" class="company-logo">
               <span class="text-pink-500 text-2xl">→</span>
             </div>
             <p class="text-gray-300">
@@ -198,11 +198,11 @@ featured_image: "../assets/images/defaults/about_us.jpg"
         <a
           href="/success-stories/crio"
           class="case-study-card"
-          style="background-image: url('https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/education.png');"
+          style="background-image: url('https://m3sservices.s3.us-east-1.amazonaws.com/education.png');"
         >
           <div>
             <div class="flex items-center justify-between mb-4">
-              <img src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/crio_do.png" alt="Crio Logo" class="company-logo">
+              <img src="https://m3sservices.s3.us-east-1.amazonaws.com/crio_do.png" alt="Crio Logo" class="company-logo">
               <span class="text-pink-500 text-2xl">→</span>
             </div>
             <p class="text-gray-300">
@@ -218,7 +218,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
       <div class="grid grid-cols-1 single-column-grid gap-4">
         <div
           class="case-study-card"
-          style="background-image: url('https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/real_estate.png');"
+          style="background-image: url('https://m3sservices.s3.us-east-1.amazonaws.com/real_estate.png');"
         >
           <div>
             <div class="flex items-center justify-between mb-4">
@@ -237,7 +237,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
       <div class="grid grid-cols-1 single-column-grid gap-4">
         <div
           class="case-study-card"
-          style="background-image: url('https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/environment.png');"
+          style="background-image: url('https://m3sservices.s3.us-east-1.amazonaws.com/environment.png');"
         >
           <div>
             <div class="flex items-center justify-between mb-4">
@@ -256,7 +256,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
       <div class="grid grid-cols-1 single-column-grid gap-4">
         <div
           class="case-study-card"
-          style="background-image: url('https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/logistics.png');"
+          style="background-image: url('https://m3sservices.s3.us-east-1.amazonaws.com/logistics.png');"
         >
           <div>
             <div class="flex items-center justify-between mb-4">

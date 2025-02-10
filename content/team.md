@@ -105,67 +105,67 @@ featured_image: "../assets/images/defaults/about_us.jpg"
         <!-- Single set of logos -->
         <a href="https://www.servicenow.com" target="_blank" rel="noopener" class="logo-link">
           <img 
-            src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/servicenow.png" 
+            src="https://m3sservices.s3.us-east-1.amazonaws.com/servicenow.png" 
             alt="ServiceNow" 
             class="logo-img" loading="lazy">
         </a>
         <a href="https://www2.deloitte.com" target="_blank" rel="noopener" class="logo-link">
           <img 
-            src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/deloitte.png" 
+            src="https://m3sservices.s3.us-east-1.amazonaws.com/deloitte.png" 
             alt="Deloitte" 
             class="logo-img" loading="lazy">
         </a>
         <a href="https://www.xneelo.com" target="_blank" rel="noopener" class="logo-link">
           <img 
-            src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/xneelo.png" 
+            src="https://m3sservices.s3.us-east-1.amazonaws.com/xneelo.png" 
             alt="Xneelo" 
             class="logo-img" loading="lazy">
         </a>
         <a href="https://www.ebhorsmanandson.com" target="_blank" rel="noopener" class="logo-link">
           <img 
-            src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/ebhorsman.png" 
+            src="https://m3sservices.s3.us-east-1.amazonaws.com/ebhorsman.png" 
             alt="E.B. Horsman &amp; Son" 
             class="logo-img" loading="lazy">
         </a>
         <a href="https://www.lbl.gov" target="_blank" rel="noopener" class="logo-link">
           <img 
-            src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/berkeley.jpg" 
+            src="https://m3sservices.s3.us-east-1.amazonaws.com/berkeley.jpg" 
             alt="Berkley Labs" 
             class="logo-img" loading="lazy">
         </a>
         <a href="https://www.ornl.gov" target="_blank" rel="noopener" class="logo-link">
           <img 
-            src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/ornl.png" 
+            src="https://m3sservices.s3.us-east-1.amazonaws.com/ornl.png" 
             alt="Oak Ridge National Laboratory" 
             class="logo-img" loading="lazy">
         </a>
         <a href="https://www.cam.ac.uk" target="_blank" rel="noopener" class="logo-link">
           <img 
-            src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/ucam.png" 
+            src="https://m3sservices.s3.us-east-1.amazonaws.com/ucam.png" 
             alt="University of Cambridge" 
             class="logo-img" loading="lazy">
         </a>
         <a href="https://illinois.edu" target="_blank" rel="noopener" class="logo-link">
           <img 
-            src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/uiuc.png" 
+            src="https://m3sservices.s3.us-east-1.amazonaws.com/uiuc.png" 
             alt="University of Illinois at Urbana-Champaign" 
             class="logo-img" loading="lazy">
         </a>
         <a href="https://www.ubc.ca" target="_blank" rel="noopener" class="logo-link">
           <img 
-            src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/ubc.png" 
+            src="https://m3sservices.s3.us-east-1.amazonaws.com/ubc.png" 
             alt="University of British Columbia" 
             class="logo-img" loading="lazy">
         </a>
         <a href="https://www.dtu.ac.in" target="_blank" rel="noopener" class="logo-link">
           <img 
-            src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/dtu.png" 
+            src="https://m3sservices.s3.us-east-1.amazonaws.com/dtu.png" 
             alt="Delhi Technical University" 
             class="logo-img" loading="lazy">
         </a>
         <a href="https://www.du.ac.in" target="_blank" rel="noopener" class="logo-link">
           <img 
-            src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/du.png" 
+            src="https://m3sservices.s3.us-east-1.amazonaws.com/du.png" 
             alt="Delhi University" 
             class="logo-img" loading="lazy">
         </a>
@@ -207,7 +207,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
     <div class="relative mb-4 md:mb-0 w-32 h-32 mx-auto md:mx-0">
       <div class="diamond-wrapper"></div>
       <img 
-        src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/sunit.jpg"
+        src="https://m3sservices.s3.us-east-1.amazonaws.com/sunit.jpg"
         alt="Sunit Tandon"
         class="rounded-full w-32 h-32 object-cover"
       />
@@ -238,7 +238,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
     <div class="relative mb-4 md:mb-0 w-32 h-32 mx-auto md:mx-0">
       <div class="diamond-wrapper"></div>
       <img 
-        src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/gauransh.jpg" 
+        src="https://m3sservices.s3.us-east-1.amazonaws.com/gauransh.jpg" 
         alt="Gauransh Tandon" 
         class="rounded-full w-32 h-32 object-cover"
       />
@@ -270,7 +270,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
     <div class="relative mb-4 md:mb-0 w-32 h-32 mx-auto md:mx-0">
       <div class="diamond-wrapper"></div>
       <img 
-        src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/pranav.jpg"
+        src="https://m3sservices.s3.us-east-1.amazonaws.com/pranav.jpg"
         alt="Pranav Tandon"
         class="rounded-full w-32 h-32 object-cover"
       />
@@ -303,7 +303,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
     <div class="diamond-wrapper"></div>
     <!-- Replace with Navjot's photo -->
     <img 
-      src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/navjot.png"
+      src="https://m3sservices.s3.us-east-1.amazonaws.com/navjot.png"
       alt="Navjot Singh"
       class="rounded-full w-32 h-32 object-cover"
     />
@@ -335,7 +335,7 @@ featured_image: "../assets/images/defaults/about_us.jpg"
     <div class="diamond-wrapper"></div>
     <!-- Replace with Abhishek's photo -->
     <img 
-      src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/abhishek.jpeg"
+      src="https://m3sservices.s3.us-east-1.amazonaws.com/abhishek.jpeg"
       alt="Abhishek Chowdhry"
       class="rounded-full w-32 h-32 object-cover"
     />
