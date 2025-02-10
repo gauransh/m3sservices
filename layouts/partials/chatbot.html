@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Chat with Our AI Chatbot</title>
+  <title>Minimal Chatbot (Worker-Dependent)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
-    /* ------------------------------ */
-    /* Chatbot Container Base Styles  */
-    /* ------------------------------ */
+    /* ====== Chatbot Container Styles ====== */
     #chatbot-container {
       position: fixed;
       bottom: 20px;
@@ -16,7 +15,7 @@
       z-index: 1000;
       transition: all 0.3s ease;
     }
-    /* Minimized state: circle (60x60) with a bright gradient */
+    /* Minimized circle vs. expanded rectangle */
     #chatbot-container.minimized {
       width: 60px;
       height: 60px;
@@ -28,46 +27,28 @@
       justify-content: center;
       overflow: hidden;
     }
-    /* Expanded state: rectangular chat window (300px wide) */
     #chatbot-container.expanded {
       width: 300px;
       border-radius: 8px;
       background: #1f2937;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 6px rgba(236, 206, 206, 0.3);
       overflow: hidden;
     }
 
-    /* ------------------------------ */
-    /* Minimized Icon vs. Full Content */
-    /* ------------------------------ */
-    /* In minimized state, show only the icon */
-    #chatbot-icon {
-      display: block;
-    }
-    /* Hide the full chat content when minimized */
-    #chatbot-content {
-      display: none;
-    }
-    /* When expanded, hide the icon and show full content */
-    #chatbot-container.expanded #chatbot-icon {
-      display: none;
-    }
-    #chatbot-container.expanded #chatbot-content {
-      display: block;
-    }
+    /* Show/hide child elements based on minimized/expanded */
+    #chatbot-icon { display: block; }
+    #chatbot-content { display: none; }
+    #chatbot-container.expanded #chatbot-icon { display: none; }
+    #chatbot-container.expanded #chatbot-content { display: block; }
 
-    /* ------------------------------ */
-    /* Chat Icon (Minimized State)    */
-    /* ------------------------------ */
+    /* Chatbot icon (minimized) */
     #chatbot-icon img {
       width: 40px;
       height: 40px;
       filter: brightness(1.2);
     }
 
-    /* ------------------------------ */
-    /* Chat Content Styles            */
-    /* ------------------------------ */
+    /* Header in expanded state */
     #chatbot-header {
       background: #4f46e5;
       padding: 10px;
@@ -75,12 +56,10 @@
       position: relative;
       cursor: pointer;
     }
-    /* Header displays the M3S logo */
     #chatbot-header img {
       max-height: 40px;
       vertical-align: middle;
     }
-    /* Toggle icon in the header */
     #chatbot-header .toggle-icon {
       position: absolute;
       right: 10px;
@@ -88,7 +67,6 @@
       transform: translateY(-50%);
       font-size: 18px;
     }
-    /* Notification badge styling */
     #chat-notification {
       position: absolute;
       top: 5px;
@@ -103,7 +81,8 @@
       line-height: 16px;
       display: none;
     }
-    /* Chat log area */
+
+    /* Chat Log area */
     #chat-log {
       height: 200px;
       overflow-y: auto;
@@ -124,27 +103,8 @@
       background: #6b7280;
       text-align: left;
     }
-    /* Loading spinner styling */
-    .message.loading {
-      display: flex;
-      align-items: center;
-      font-style: italic;
-      opacity: 0.7;
-    }
-    .spinner {
-      border: 4px solid #f3f3f3;
-      border-top: 4px solid #4f46e5;
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      animation: spin 1s linear infinite;
-      margin-right: 8px;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    /* Chat input area */
+
+    /* Input area */
     #chat-input-container {
       display: flex;
       border-top: 1px solid #374151;
@@ -164,83 +124,84 @@
       padding: 0 15px;
       cursor: pointer;
     }
-    /* ------------------------------ */
-    /* Booking Link Styling (Classy)  */
-    /* ------------------------------ */
-    .booking-link {
-      color: #fff;
-      background: transparent;
-      border: 1px solid #fff;
-      padding: 4px 8px;
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 0.8em;
-      font-weight: 400;
+
+    /* Spinner */
+    .spinner {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #4f46e5;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      animation: spin 1s linear infinite;
+      margin-right: 8px;
+      display: inline-block;
     }
-    .booking-link:hover {
-      background: rgba(255, 255, 255, 0.1);
+    @keyframes spin {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
   </style>
 </head>
 <body>
-  <!-- Chatbot Widget Container -->
   <div id="chatbot-container" class="minimized">
-    <!-- Minimized State: Circle with Logo Icon -->
+    <!-- Minimized Circle Icon -->
     <div id="chatbot-icon">
-      <img src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/logo_m3s.png" alt="M3S Logo">
+      <img
+        src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/logo_m3s.png"
+        alt="M3S Logo"
+      />
     </div>
-    <!-- Expanded State: Full Chat Content -->
+
+    <!-- Expanded State -->
     <div id="chatbot-content">
       <div id="chatbot-header">
-        <img src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/logo_m3s.png" alt="M3S Services Logo">
+        <img
+          src="https://pub-63c6a647b6f740e885a4d0b9305248e3.r2.dev/defaults/logo_m3s.png"
+          alt="M3S Logo"
+        />
         <span id="chat-notification">!</span>
         <span class="toggle-icon">▼</span>
       </div>
       <div id="chat-log"></div>
       <div id="chat-input-container">
-        <input type="text" id="chat-input" placeholder="Type your message..." />
+        <input type="text" id="chat-input" placeholder="Type your message..."/>
         <button id="chat-send">Send</button>
       </div>
     </div>
   </div>
 
   <script>
-    // Cloudflare Worker URL and API key.
-    // Ensure that the API key here ("sk-abc123") matches your Worker environment.
-    const WORKER_URL = 'https://m3schatbot.gauranshtandon.workers.dev/';
-    const API_KEY = 'sk-1a9d8c642b7e53091f23g6hilk5nom47';
-
-    // Get references to DOM elements.
-    const chatbotContainer = document.getElementById('chatbot-container');
-    const chatbotContent = document.getElementById('chatbot-content');
-    const chatbotIcon = document.getElementById('chatbot-icon');
-    const chatbotHeader = document.getElementById('chatbot-header');
-    const chatLog = document.getElementById('chat-log');
-    const chatInput = document.getElementById('chat-input');
-    const chatSend = document.getElementById('chat-send');
-    const toggleIcon = chatbotHeader.querySelector('.toggle-icon');
-    const chatNotification = document.getElementById('chat-notification');
+    // 1) Configuration
+    const WORKER_URL = "https://m3schatbot.gauranshtandon.workers.dev/"; 
+    const API_KEY    = "sk-1a9d8c642b7e53091f23g6hilk5nom47"; // if Worker checks X-API-KEY
 
     let isMinimized = true;
     let unreadCount = 0;
-    // Fallback conversation state:
-    // "initial" – no conversation yet; any first input is treated as greeting.
-    // "contact" – chatbot has asked for email or name.
-    // "done" – conversation complete; booking info provided.
-    let fakeConversationState = "initial";
+    let localChat   = []; // store user & bot messages
 
-    // Toggle function: always toggle between minimized (circle) and expanded (rectangle).
+    // DOM references
+    const chatbotContainer = document.getElementById('chatbot-container');
+    const chatbotIcon      = document.getElementById('chatbot-icon');
+    const chatbotContent   = document.getElementById('chatbot-content');
+    const chatLog          = document.getElementById('chat-log');
+    const chatInput        = document.getElementById('chat-input');
+    const chatSend         = document.getElementById('chat-send');
+    const chatbotHeader    = document.getElementById('chatbot-header');
+    const toggleIcon       = chatbotHeader.querySelector('.toggle-icon');
+    const chatNotification = document.getElementById('chat-notification');
+
+    // 2) Minimize/Expand
     function toggleChat() {
       if (isMinimized) {
-        // Expand the widget.
         chatbotContainer.classList.remove('minimized');
         chatbotContainer.classList.add('expanded');
         chatbotIcon.style.display = 'none';
         chatbotContent.style.display = 'block';
         toggleIcon.textContent = '▼';
         isMinimized = false;
+        unreadCount = 0;
+        chatNotification.style.display = 'none';
       } else {
-        // Collapse the widget.
         chatbotContainer.classList.remove('expanded');
         chatbotContainer.classList.add('minimized');
         chatbotIcon.style.display = 'block';
@@ -249,138 +210,103 @@
         isMinimized = true;
       }
     }
-    // Attach toggle event to the container (except for input and send button clicks).
+
     chatbotContainer.addEventListener('click', (e) => {
       if (e.target.id !== 'chat-input' && e.target.id !== 'chat-send') {
         toggleChat();
       }
     });
 
-    // Append a message to the chat log.
-    // For bot messages, we set innerHTML to allow clickable links.
-    function appendMessage(sender, text) {
-      const messageDiv = document.createElement('div');
-      messageDiv.classList.add('message', sender);
-      if (sender === 'bot') {
-        messageDiv.innerHTML = text;
-      } else {
-        messageDiv.textContent = text;
-      }
-      chatLog.appendChild(messageDiv);
+    // 3) Render Chat
+    function renderChat() {
+      chatLog.innerHTML = '';
+      localChat.forEach(msg => {
+        const msgDiv = document.createElement('div');
+        msgDiv.classList.add('message', msg.role);
+        if (msg.role === 'bot') {
+          // interpret HTML for possible links
+          msgDiv.innerHTML = msg.content;
+        } else {
+          msgDiv.textContent = msg.content;
+        }
+        chatLog.appendChild(msgDiv);
+      });
       chatLog.scrollTop = chatLog.scrollHeight;
     }
 
-    // Fallback conversation logic.
-    function getFakeResponse(userInput) {
-      const input = userInput.toLowerCase().trim();
-      if (fakeConversationState === "initial") {
-        fakeConversationState = "contact";
-        return "Hi there, welcome to M3S Services! How can we help you today? Please share your email or name so we can assist you further.";
-      } else if (fakeConversationState === "contact") {
-        if (input === "no" || input.includes("not interested") || input.includes("no thanks") || input === "nah") {
-          fakeConversationState = "done";
-          return "Understood. If you change your mind, you can always <a href='https://cal.com/m3sservices/30min' target='_blank' class='booking-link'>BOOK A CALL HERE</a>.";
-        }
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (emailRegex.test(input) || input.length >= 3) {
-          fakeConversationState = "done";
-          return "Thank you! Please, <a href='https://cal.com/m3sservices/30min' target='_blank' class='booking-link'>BOOK A CALL HERE</a>";
-        }
-        return "Could you please provide a valid email address or your name so we can assist you further?";
-      } else {
-        return "For further assistance, please <a href='https://cal.com/m3sservices/30min' target='_blank' class='booking-link'>BOOK A CALL HERE</a>.";
-      }
-    }
-
-    // Function to send the user's prompt to the Cloudflare Worker.
-    async function sendMessage(prompt) {
-      const data = { prompt: prompt };
+    // 4) Call Worker
+    async function callWorker(userMessage) {
       try {
-        const response = await fetch(WORKER_URL, {
+        const resp = await fetch(WORKER_URL, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'X-API-KEY': API_KEY
+            'X-API-KEY': API_KEY // remove if not needed
           },
-          body: JSON.stringify(data)
+          body: JSON.stringify({ prompt: userMessage })
         });
-        console.log('Response status:', response.status);
-        if (!response.ok) {
-          const errorText = await response.text();
-          console.error("Response not OK:", errorText);
-          return "Sorry, something went wrong.";
+
+        if (!resp.ok) {
+          const errTxt = await resp.text();
+          console.warn("Worker responded with error:", errTxt);
+          return "Sorry, I'm having trouble right now.";
         }
-        try {
-          const jsonResponse = await response.json();
-          console.log('Raw JSON response:', jsonResponse);
-          if (jsonResponse.response && typeof jsonResponse.response.response === 'string') {
-            return jsonResponse.response.response;
-          }
-          console.error("JSON structure is not as expected:", jsonResponse);
-          return "Sorry, something went wrong.";
-        } catch (jsonError) {
-          const text = await response.text();
-          console.error('Error parsing JSON:', jsonError, 'Response text:', text);
-          return "Sorry, something went wrong.";
-        }
-      } catch (error) {
-        console.error('Fetch error:', error);
-        return "Sorry, something went wrong.";
+
+        // Expect { response: "...some text..." }
+        const data = await resp.json();
+        return data.response || "No response from Worker.";
+      } catch (err) {
+        console.error("Fetch error:", err);
+        return "Sorry, I'm having trouble connecting.";
       }
     }
 
-    // Event listener for the Send button.
-    chatSend.addEventListener('click', async (e) => {
-      e.stopPropagation();
-      const prompt = chatInput.value.trim();
-      if (!prompt) return;
-      appendMessage('user', prompt);
+    // 5) Handle "Send"
+    async function handleSend() {
+      const userMsg = chatInput.value.trim();
+      if (!userMsg) return;
+
+      // Display user message
+      localChat.push({ role: 'user', content: userMsg });
+      renderChat();
       chatInput.value = '';
 
-      // Append a loading message with spinner.
-      const loadingMessage = document.createElement('div');
-      loadingMessage.classList.add('message', 'bot', 'loading');
-      loadingMessage.innerHTML = '<span class="spinner"></span>Loading...';
-      chatLog.appendChild(loadingMessage);
+      // Show spinner
+      const spinnerDiv = document.createElement('div');
+      spinnerDiv.classList.add('message','bot');
+      spinnerDiv.innerHTML = '<span class="spinner"></span> <span>...</span>';
+      chatLog.appendChild(spinnerDiv);
       chatLog.scrollTop = chatLog.scrollHeight;
 
-      // Try to get the API response.
-      let reply = await sendMessage(prompt);
-      if (reply === "Sorry, something went wrong.") {
-        reply = getFakeResponse(prompt);
-      }
-      
-      chatLog.removeChild(loadingMessage);
-      appendMessage('bot', reply);
+      // Call Worker
+      const workerReply = await callWorker(userMsg);
 
+      // Remove spinner
+      spinnerDiv.remove();
+
+      // Show Worker reply
+      localChat.push({ role: 'bot', content: workerReply });
+      renderChat();
+
+      // If minimized, increment unread
       if (isMinimized) {
         unreadCount++;
         chatNotification.textContent = unreadCount;
         chatNotification.style.display = 'block';
       }
+    }
+
+    // 6) Event Listeners
+    chatSend.addEventListener('click', (e) => {
+      e.stopPropagation();
+      handleSend();
     });
 
     chatInput.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
-        chatSend.click();
+        handleSend();
       }
     });
   </script>
-  <!-- Booking link styling -->
-  <style>
-    .booking-link {
-      color: #fff;
-      background:  #ec1aff;
-      border: 1px solid #fff;
-      padding: 4px 8px;
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 0.8em;
-      font-weight: 400;
-    }
-    .booking-link:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-  </style>
 </body>
 </html>
